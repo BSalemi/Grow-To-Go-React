@@ -1,14 +1,18 @@
 import React from 'react'
-
+import { loginUser } from '../actions/actionCreators'
+import { connect } from 'react-redux'
+ 
 const USERS_URL = "http://localhost:3000/users"
+// let loggedIn = null
 
 
-export default class LoginForm extends React.Component {
+class LoginForm extends React.Component {
 
     state = {
         name: "",
         email: ""
     }
+
 
     handleOnChange = event => {
         this.setState({
@@ -31,12 +35,15 @@ export default class LoginForm extends React.Component {
             body: JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(user_data => console.log(user_data, "user_data"))
-    }
+        .then(function(user_data){
+            this.props.loginUser(user_data)
+            localStorage.loggedIn = user_data.id
+        })
+    }  
+      
     render(){
         return(
             <div id="login form">
-                {/* <h4>Welcome to GrowToGo. Enter your name and email to get started. </h4> */}
                 <form onSubmit={event => this.handleOnSubmit(event)}>
                     <input type="text" name="name" placeholder="Please enter your name" value={this.state.name} onChange={event => this.handleOnChange(event)}/> 
                     <br/>
@@ -48,3 +55,6 @@ export default class LoginForm extends React.Component {
         )
     }
 }
+
+
+export default connect(null, {loginUser})(LoginForm)
