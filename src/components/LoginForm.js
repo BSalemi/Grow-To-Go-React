@@ -1,5 +1,5 @@
 import React from 'react'
-import { loginUser } from '../actions/actionCreators'
+import { loginUser } from '../actions/userActions'
 import { connect } from 'react-redux'
  
 const USERS_URL = "http://localhost:3000/users"
@@ -35,11 +35,10 @@ class LoginForm extends React.Component {
             body: JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(function(user_data){
-            console.log(user_data)
-            debugger
+        .then((user_data) => {
             this.props.loginUser(user_data)
             localStorage.loggedIn = user_data.id
+           
         })
     }  
 

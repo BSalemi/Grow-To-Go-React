@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOGOUT_USER } from '../actions/types'
+import { LOGIN_USER } from '../actions/types'
 
 //GOAL: Save logged in user info to the Redux Store's State 
 
