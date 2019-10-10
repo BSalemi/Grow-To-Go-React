@@ -36,11 +36,13 @@ class LoginForm extends React.Component {
         })
         .then(res => res.json())
         .then(function(user_data){
+            console.log(user_data)
+            debugger
             this.props.loginUser(user_data)
             localStorage.loggedIn = user_data.id
         })
     }  
-      
+
     render(){
         return(
             <div id="login form">

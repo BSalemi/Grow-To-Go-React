@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOGOUT_USER } from '../actions/types'
+import { LOGIN_USER, LOGOUT_USER } from './types'
 
 export function loginUser(user) {
     return {
