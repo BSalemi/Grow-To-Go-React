@@ -12,11 +12,9 @@ function App() {
       <Router>
         <div>
           <Header/>
-          {/* SEARCH BAR? */}
           <Route exact path="/login" component={LoginForm} />
-          <div id="plant-container">
+          
           <PlantContainer/>
-          </div>
         </div>
       </Router>
     </div>

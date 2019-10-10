@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -14,4 +15,21 @@ code {
 
 #app-header {
   margin-top: 50px
+}
+
+.plant-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.plant-card {
+  text-align: center;
+  padding: 5px;
+}
+
+.plant-pic{
+  border: 5px ridge brown;
+  height: 393px;
+  width:324px
 }

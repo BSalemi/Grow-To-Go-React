@@ -13,7 +13,7 @@ class PlantContainer extends Component {
 
     generatePlants = () => {
         const plantData = this.props.plants.fetchedPlants.map(plant => {
-        return <div key={plant.id}>
+        return <div className="plant-card" key={plant.id}>
             <Plant image={plant.image} size={plant.size} price={plant.price} name={plant.name} species={plant.species} exp_level={plant.exp_level} light_required={plant.light_required} pet_friendly={plant.pet_friendly}/>
         </div>
         })
@@ -23,7 +23,7 @@ class PlantContainer extends Component {
     render() {
 
         return (
-            <div>
+            <div className="plant-container">
                 {this.generatePlants()}
             </div>
         )
