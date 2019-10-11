@@ -14,7 +14,7 @@ export function userReducer(state = initialState, action) {
         case ADD_CART_PLANT: 
             return {
                 ...state,
-                user: {...state.user, cart: [...state.user.cart, action.cart_plant]}
+                user: {...state.user, carts: [...state.user.carts, action.cart_plant]}
             }
         // case ADD_ITEM_TO_CART:
         //     return {

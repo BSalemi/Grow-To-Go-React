@@ -35,7 +35,9 @@ class PlantCard extends Component {
             body: JSON.stringify(cart_plant)
         })
         .then(res => res.json())
-        .then(cart_plant_data => console.log(cart_plant_data, "cart_plant_resp"))
+        .then((cart_plant_data) => {
+            this.props.addCartPlant(cart_plant_data)
+        })
     }
 
     renderPlantCard() {
