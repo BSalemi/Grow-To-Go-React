@@ -5,6 +5,16 @@ import Plant from '../components/Plant'
 
 
 class PlantContainer extends Component {
+    
+    state = {
+        text: ""
+    }
+
+    handleOnChange = (event) => {
+        this.setState({
+            value: event.target.value
+        })
+    }
 
     componentDidMount(){
         this.props.fetchPlants()
@@ -23,9 +33,18 @@ class PlantContainer extends Component {
     render() {
 
         return (
+            <>
+            <div className="searchForm">
+                <form>
+                    <input type="text" value={this.state.value} onChange={event => this.handleOnChange(event)}/>
+                    <input type="submit" value="Search"/>
+                </form>
+            </div>
+
             <div className="plant-container">
                 {this.generatePlants()}
             </div>
+            </>
         )
     }
 }

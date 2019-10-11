@@ -14,7 +14,6 @@ function App() {
         <div>
           <Header/>
           <Route exact path="/login" component={LoginForm} />
-          <SearchBar/>
           <PlantContainer/>
         </div>
       </Router>
