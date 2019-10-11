@@ -40,9 +40,6 @@ class LoginForm extends React.Component {
             this.props.loginUser(user_data, this.props.history)
             localStorage.loggedIn = user_data.id
         })
-        // if(localStorage.loggedIn){
-        //     this.props.history.push('/')
-        // }
     }  
 
     render(){

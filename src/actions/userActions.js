@@ -8,7 +8,7 @@ export function loginUser(user, history) {
     }
 }
 
-export function addCartPlant(cart_plant){
+export function addCartPlant(user, cart_plant){
     return {
         type: ADD_CART_PLANT,
         cart_plant
