@@ -17,8 +17,18 @@ class PlantContainer extends Component {
         })
     }
 
+    checkForUser(){
+        if(!localStorage.loggedIn){
+            return false
+        } 
+    }
+
     componentDidMount(){
-        this.props.fetchPlants()
+        if(this.checkForUser()) {
+            this.props.fetchPlants()
+        } else {
+            this.props.history.push('/login');
+        }  
     }
 
 

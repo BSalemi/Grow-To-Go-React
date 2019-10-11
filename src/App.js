@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import LoginForm from './components/LoginForm'
 import PlantContainer from './containers/PlantContainer';
-import FilterOptions from './components/FilterOptions'
+
 
 
 class App extends React.Component {
@@ -21,9 +21,8 @@ class App extends React.Component {
             </div>
             </Link>
             </div>
-              {/* <FilterOptions/> */}
-            <Route exact path="/login" component={LoginForm} />
-            <PlantContainer/>
+            <Route exact path="/login" component={LoginForm} history={this.history}/>
+            <Route exact path="/" history={this.history} component={PlantContainer}/>
         </Router>
       </div>
     );
