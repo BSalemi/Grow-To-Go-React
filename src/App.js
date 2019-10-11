@@ -22,4 +22,6 @@ function App() {
   );
 }
 
+// mapDispatchToProps here to handle SearchBar function?
+
 export default App;
