@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { fetchPlants, searchPlants } from '../actions/plantActions'
 import { connect } from 'react-redux'
 import PlantCard from '../components/PlantCard'
+import FilterOptions from '../components/FilterOptions'
 
 
 class PlantContainer extends Component {
@@ -40,7 +41,8 @@ class PlantContainer extends Component {
                     <input type="submit" value="Search"/>
                 </form>
             </div>
-
+            <br/>
+            <FilterOptions/>
             <div className="plant-container">
                 {this.generatePlants()}
             </div>
