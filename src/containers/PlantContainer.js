@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { fetchPlants } from '../actions/plantActions'
+import { fetchPlants, searchPlants } from '../actions/plantActions'
 import { connect } from 'react-redux'
-import Plant from '../components/Plant'
+import PlantCard from '../components/PlantCard'
 
 
 class PlantContainer extends Component {
@@ -24,7 +24,7 @@ class PlantContainer extends Component {
     generatePlants = () => {
         const plantData = this.props.plants.fetchedPlants.map(plant => {
         return <div className="plant-card" key={plant.id}>
-            <Plant image={plant.image} size={plant.size} price={plant.price} name={plant.name} species={plant.species} exp_level={plant.exp_level} light_required={plant.light_required} pet_friendly={plant.pet_friendly}/>
+            <PlantCard image={plant.image} size={plant.size} price={plant.price} name={plant.name} species={plant.species} exp_level={plant.exp_level} light_required={plant.light_required} pet_friendly={plant.pet_friendly}/>
         </div>
         })
         return plantData
@@ -34,7 +34,7 @@ class PlantContainer extends Component {
 
         return (
             <>
-            <div className="searchForm">
+            <div className="searchForm" onSubmit={event => this.handleOnSubmit(event)}>
                 <form>
                     <input type="text" value={this.state.value} onChange={event => this.handleOnChange(event)}/>
                     <input type="submit" value="Search"/>
@@ -49,8 +49,9 @@ class PlantContainer extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {plants: state.plants}
-}
+const mapStateToProps = state => ({
+    plants: state.plants,
+    text: state.text
+})
 
-export default connect(mapStateToProps, {fetchPlants})(PlantContainer)
+export default connect(mapStateToProps, {fetchPlants, searchPlants})(PlantContainer)

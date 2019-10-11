@@ -1,4 +1,4 @@
-import { FETCH_PLANTS } from './types'
+import { FETCH_PLANTS, SEARCH_PLANTS } from './types'
 
 const PLANTS_URL = "http://localhost:3000/plants"
 
@@ -12,5 +12,13 @@ export const fetchPlants = () => dispatch => {
         })  
     })
 }
+
+export const searchPlants = text => dispatch => {
+    console.log("searchPlants has been called ");
+    dispatch({
+      type: SEARCH_PLANTS,
+      payload: text
+    });
+  };
 
  
