@@ -1,8 +1,9 @@
 import React from 'react'
 import { loginUser } from '../actions/userActions'
 import { connect } from 'react-redux'
- 
-const USERS_URL = "http://localhost:3000/users"
+import {USERS_URL} from '../constants.js' 
+import { withRouter } from 'react-router-dom'
+
 // let loggedIn = null
 
 
@@ -36,12 +37,12 @@ class LoginForm extends React.Component {
         })
         .then(res => res.json())
         .then((user_data) => {
-            this.props.loginUser(user_data)
+            this.props.loginUser(user_data, this.props.history)
             localStorage.loggedIn = user_data.id
         })
-        if(localStorage.loggedIn){
-            this.props.history.push('/')
-        }
+        // if(localStorage.loggedIn){
+        //     this.props.history.push('/')
+        // }
     }  
 
     render(){
@@ -60,4 +61,4 @@ class LoginForm extends React.Component {
 }
 
 
-export default connect(null, {loginUser})(LoginForm)
+export default connect(null, {loginUser})(withRouter(LoginForm))

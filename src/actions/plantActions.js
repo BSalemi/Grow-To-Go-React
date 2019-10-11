@@ -1,6 +1,5 @@
 import { FETCH_PLANTS, SEARCH_PLANTS } from './types'
-
-const PLANTS_URL = "http://localhost:3000/plants"
+import { PLANTS_URL } from '../constants.js'
 
 export const fetchPlants = () => dispatch => {
     fetch(PLANTS_URL)

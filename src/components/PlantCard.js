@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { CART_PLANTS_URL } from '../constants.js'
 
-export default class PlantCard extends Component {
+class PlantCard extends Component {
 
     state = {
         forward: true 
@@ -14,6 +16,27 @@ export default class PlantCard extends Component {
         })
     }
 
+    addToCart = event => {
+        event.preventDefault()
+        console.log("plant_id", event.target.dataset.plantId)
+        let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
+        console.log("cartId", cartId)
+        const cart_plant = {
+            cart_id: cartId,
+            plant_id: event.target.dataset.plantId
+        }
+        fetch(CART_PLANTS_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(cart_plant)
+        })
+        .then(res => res.json())
+        .then(cart_plant_data => console.log(cart_plant_data, "cart_plant_resp"))
+    }
+
     renderPlantCard() {
         if(this.state.forward) {
             return (
@@ -21,7 +44,7 @@ export default class PlantCard extends Component {
                 <img onClick={this.flipPlantCard} className="plant-pic" alt="house-plant" src={this.props.image} />
                 <h2>{this.props.name}</h2>
                 <p>${this.props.price}</p>
-                <button data-plant-id={this.props.id}> Add To Cart </button>
+                <button data-plant-id={this.props.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
                 </div>
             )
         } else {
@@ -46,3 +69,11 @@ export default class PlantCard extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    user: state.user 
+})
+
+
+
+export default connect(mapStateToProps)(PlantCard)

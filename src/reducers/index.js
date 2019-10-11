@@ -5,7 +5,7 @@ import { plantReducer } from './plantReducer'
 
 
 const rootReducer = combineReducers({
-    users: userReducer,
+    user: userReducer,
     plants: plantReducer
 });
 
