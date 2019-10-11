@@ -44,7 +44,6 @@ class PlantContainer extends Component {
 
 
     generatePlants = () => {
-        console.log("this.props", this.props)
         const plantData = this.props.plants.fetchedPlants.map(plant => {
         return <div className="plant-card" key={plant.id}>
             <PlantCard id={plant.id} image={plant.image} size={plant.size} price={plant.price} name={plant.name} species={plant.species} exp_level={plant.exp_level} light_required={plant.light_required} pet_friendly={plant.pet_friendly}/>

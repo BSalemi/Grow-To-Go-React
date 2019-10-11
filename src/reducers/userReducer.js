@@ -1,4 +1,4 @@
-import { LOGIN_USER } from '../actions/types'
+import { LOGIN_USER, ADD_CART_PLANT } from '../actions/types'
 
 //GOAL: Save logged in user info to the Redux Store's State 
 
@@ -11,6 +11,11 @@ export function userReducer(state = initialState, action) {
                 ...state, 
                 user: action.user 
             };
+        case ADD_CART_PLANT: 
+            return {
+                ...state,
+                user: {...state.user, cart: [...state.user.cart, action.cart_plant]}
+            }
         // case ADD_ITEM_TO_CART:
         //     return {
         //         ...state,

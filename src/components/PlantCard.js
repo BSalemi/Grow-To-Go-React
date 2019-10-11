@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CART_PLANTS_URL } from '../constants.js'
+import { addCartPlant } from '../actions/userActions'
 
 class PlantCard extends Component {
 
@@ -76,4 +77,4 @@ const mapStateToProps = state => ({
 
 
 
-export default connect(mapStateToProps)(PlantCard)
+export default connect(mapStateToProps, {addCartPlant})(PlantCard)
