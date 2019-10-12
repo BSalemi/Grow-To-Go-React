@@ -4,8 +4,6 @@ export const LOGOUT_USER = "LOGOUT_USER";
 
 export const FETCH_PLANTS = "FETCH_PLANTS";
 
-export const SEARCH_PLANTS = "SEARCH_PLANTS";
-
 export const FETCH_CART_PLANTS = "FETCH_CART_PLANTS";
 
 export const ADD_CART_PLANT = "ADD_CART_PLANT";

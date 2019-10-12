@@ -1,4 +1,4 @@
-import { FETCH_PLANTS, SEARCH_PLANTS } from './types'
+import { FETCH_PLANTS } from './types'
 import { PLANTS_URL } from '../constants.js'
 
 export const fetchPlants = () => dispatch => {
@@ -11,13 +11,3 @@ export const fetchPlants = () => dispatch => {
         })  
     })
 }
-
-export const searchPlants = text => dispatch => {
-    console.log("searchPlants has been called ");
-    dispatch({
-      type: SEARCH_PLANTS,
-      payload: text
-    });
-  };
-
- 
