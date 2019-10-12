@@ -1,26 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class SearchBar extends Component {
-
-    state = {
-        text: ""
-    }
-
-    handleOnChange = (event) => {
-        this.setState({
-            value: event.target.value
-        })
-    }
-
-
-    render() {
+const SearchBar = (props) =>  {
         return (
             <div className="searchForm" onSubmit={event => this.handleOnSubmit(event)}>
                 <form>
-                    <input type="text" value={this.state.value} onChange={event => this.handleOnChange(event)}/>
+                    <input type="text" id="search-input" onChange={props.updateSearch}/>
                     <input type="submit" value="Search"/>
                 </form>
             </div>
         )
-    }
 }
+
+export default SearchBar

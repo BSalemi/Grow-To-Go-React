@@ -4,11 +4,23 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import LoginForm from './components/LoginForm'
 import PlantContainer from './containers/PlantContainer';
 import CartPlantContainer from './containers/CartPlantContainer';
+import SearchBar from './components/SearchBar';
 
 
 
 class App extends React.Component {
   
+  state = {
+    search: ""
+}
+
+ updateSearch = (event) =>{
+   this.setState({
+     search: event.target.value
+   })
+ }
+
+
   render(){
     return (
       <div className="App">
@@ -25,7 +37,8 @@ class App extends React.Component {
             </div>
             <CartPlantContainer/>
             <Route exact path="/login" component={LoginForm} history={this.history}/>
-            <Route exact path="/" history={this.history} component={PlantContainer}/>
+            <SearchBar updateSearch={this.updateSearch}/>
+            <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search}/>}/>
         </Router>
       </div>
     );

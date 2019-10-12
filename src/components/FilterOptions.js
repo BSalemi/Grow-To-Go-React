@@ -43,12 +43,12 @@ export default class FilterOptions extends Component {
                     <option value="find_full_sun">Full Sun</option>
                 </select>
             </div>
-            <div className="sort-menu-children">
+            {/* <div className="sort-menu-children">
                 <label value="select-pet-friendly"><strong>Pet Friendly:</strong></label>
-                <select id="light-required-dropdown" name="select-pet-friendly">
-                    <option value="find_pet_friendly">Yes</option>
-                </select>
-            </div>
+                <check id="pet-friendly-checkbox" name="select-pet-friendly">
+                    <option value="find_pet_friendly"></option>
+                </check>
+            </div> */}
         </div>
         )
     }

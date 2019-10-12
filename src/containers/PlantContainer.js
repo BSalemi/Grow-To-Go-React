@@ -8,8 +8,16 @@ import FilterOptions from '../components/FilterOptions'
 
 
 class PlantContainer extends Component {
-   
-  
+    constructor(props){
+        super(props)
+       
+    }
+
+    filterPlants(){
+        return this.props.plants.fetchedPlants.filter(plantObj => {
+            return plantObj.name.toLowerCase().includes(this.props.search.toLowerCase())
+        })  
+    }
 
     checkForUser(){
         if(localStorage.loggedIn){
@@ -36,16 +44,18 @@ class PlantContainer extends Component {
 
 
     generatePlants = () => {
-        const plantData = this.props.plants.fetchedPlants.map(plant => {
+        return this.filterPlants().map(plant => {
         return <div className="plant-card" key={plant.id}>
             <PlantCard id={plant.id} image={plant.image} size={plant.size} price={plant.price} name={plant.name} species={plant.species} exp_level={plant.exp_level} light_required={plant.light_required} pet_friendly={plant.pet_friendly}/>
         </div>
         })
-        return plantData
     }
 
-    render() {
+     
+    
 
+    render() {
+        console.log(this.props.plants.fetchedPlants, "fetched plants")
         return (
             <>
             <br/>
