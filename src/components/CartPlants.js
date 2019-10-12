@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Cart extends Component {
+export default class CartPlant extends Component {
     state = {
         visible: false
     }

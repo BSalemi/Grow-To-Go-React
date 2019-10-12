@@ -1,4 +1,4 @@
-import { LOGIN_USER, ADD_CART_PLANT, } from './types'
+import { LOGIN_USER, ADD_CART_PLANT, FETCH_CART_PLANTS, } from './types'
 
 export function loginUser(user, history) {
     history.push('/')  
@@ -11,6 +11,8 @@ export function loginUser(user, history) {
 export function addCartPlant(user, cart_plant){
     return {
         type: ADD_CART_PLANT,
-        cart_plant
+        cart_plant,
+        user
     }
 }
+

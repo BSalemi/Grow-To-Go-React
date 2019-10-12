@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchPlants, searchPlants } from '../actions/plantActions'
+import { fetchPlants } from '../actions/plantActions'
 import { loginUser } from '../actions/userActions'
 import { connect } from 'react-redux'
 import PlantCard from '../components/PlantCard'
@@ -9,15 +9,7 @@ import FilterOptions from '../components/FilterOptions'
 
 class PlantContainer extends Component {
    
-    state = {
-        text: ""
-    }
-
-    handleOnChange = (event) => {
-        this.setState({
-            value: event.target.value
-        })
-    }
+  
 
     checkForUser(){
         if(localStorage.loggedIn){
@@ -56,12 +48,6 @@ class PlantContainer extends Component {
 
         return (
             <>
-            <div className="searchForm" onSubmit={event => this.handleOnSubmit(event)}>
-                <form>
-                    <input type="text" value={this.state.value} onChange={event => this.handleOnChange(event)}/>
-                    <input type="submit" value="Search"/>
-                </form>
-            </div>
             <br/>
             <FilterOptions/>
             <div className="plant-container">
@@ -74,8 +60,7 @@ class PlantContainer extends Component {
 
 const mapStateToProps = state => ({
     user: state.user,
-    plants: state.plants,
-    text: state.text
+    plants: state.plants
 })
 
-export default connect(mapStateToProps, {fetchPlants, searchPlants, loginUser})(PlantContainer)
+export default connect(mapStateToProps, {fetchPlants, loginUser})(PlantContainer)

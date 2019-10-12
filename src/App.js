@@ -3,10 +3,12 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import LoginForm from './components/LoginForm'
 import PlantContainer from './containers/PlantContainer';
+import CartPlantContainer from './containers/CartPlantContainer';
 
 
 
 class App extends React.Component {
+  
   render(){
     return (
       <div className="App">
@@ -21,6 +23,7 @@ class App extends React.Component {
             </div>
             </Link>
             </div>
+            <CartPlantContainer/>
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <Route exact path="/" history={this.history} component={PlantContainer}/>
         </Router>
