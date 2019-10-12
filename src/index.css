@@ -8,13 +8,17 @@ body {
   
 }
 
+.App{
+  background-color:blanchedalmond
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 #app-header {
-  margin-top: 50px
+  padding-top: 50px
 }
 
 .plant-container{

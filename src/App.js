@@ -44,7 +44,6 @@ class App extends React.Component {
     );
   }
   }
-  
-// mapDispatchToProps here to handle SearchBar function?
+
 
 export default App;
