@@ -1,4 +1,4 @@
-import { FETCH_PLANTS } from './types'
+import { FETCH_PLANTS, FIND_PLANT } from './types'
 import { PLANTS_URL } from '../constants.js'
 
 export const fetchPlants = () => dispatch => {
@@ -8,6 +8,17 @@ export const fetchPlants = () => dispatch => {
         dispatch({
             type: FETCH_PLANTS,
             payload: plants
+        })  
+    })
+}
+
+export const findPlant = (id) => dispatch => {
+    fetch(PLANTS_URL+"/"+id)
+    .then(res => res.json())
+    .then(plant => {
+        dispatch({
+            type: FIND_PLANT,
+            payload: plant
         })  
     })
 }

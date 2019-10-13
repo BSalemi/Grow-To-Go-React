@@ -9,8 +9,6 @@ import FilterOptions from './components/FilterOptions'
 import PlantShow from './components/PlantShow'
 import { USERS_URL} from './constants.js'
 import { loginUser } from './actions/userActions'
-import { connect } from 'react-redux';
-import { fetchPlants } from './actions/plantActions'
 
 
 
@@ -21,20 +19,20 @@ class App extends React.Component {
     visibilityFilter: null
   }
 
-  checkForUser(){
-    if(localStorage.loggedIn){
-        let id = localStorage.loggedIn
-        fetch(USERS_URL + "/" + id)
-        .then(res => res.json())
-        .then((user_data => {
-            loginUser(user_data)
-            fetchPlants()
-            })
-        );
-    } else {
-        this.props.history.push('/login');
-    }
-}
+//   checkForUser(){
+//     if(localStorage.loggedIn){
+//         let id = localStorage.loggedIn
+//         fetch(USERS_URL + "/" + id)
+//         .then(res => res.json())
+//         .then((user_data => {
+//             this.props.loginUser(user_data, this.props.history)
+//             this.props.fetchPlants()
+//             })
+//         );
+//     } else {
+//         this.props.history.push('/login');
+//     }
+// }
 
  updateSearch = (event) =>{
    this.setState({
@@ -48,9 +46,9 @@ class App extends React.Component {
    })
  }
 
- componentDidMount(){
-   this.checkForUser()
- }
+//  componentDidMount(){
+//    this.checkForUser()
+//  }
 
 
   render(){
@@ -82,4 +80,4 @@ class App extends React.Component {
   }
 
 
-export default connect(null, {loginUser, fetchPlants})(App);
+export default App;
