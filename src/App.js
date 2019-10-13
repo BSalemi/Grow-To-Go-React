@@ -5,19 +5,30 @@ import LoginForm from './components/LoginForm'
 import PlantContainer from './containers/PlantContainer';
 import CartPlantContainer from './containers/CartPlantContainer';
 import SearchBar from './components/SearchBar';
+import FilterOptions from './components/FilterOptions'
 
 
 
 class App extends React.Component {
   
   state = {
-    search: ""
-}
+    search: "",
+    visibilityFilter: null
+  }
 
  updateSearch = (event) =>{
    this.setState({
      search: event.target.value
    })
+ }
+
+ setVisibilityFilter = (event) => {
+   event.preventDefault()
+   console.log(event.target.value)
+   this.setState({
+     visibilityFilter: event.target.value
+   })
+   console.log(this.state.visibilityFilter, "visibility")
  }
 
 
@@ -38,7 +49,9 @@ class App extends React.Component {
             <CartPlantContainer/>
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <SearchBar updateSearch={this.updateSearch}/>
-            <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search}/>}/>
+            <br/>
+            <FilterOptions setVisibilityFilter={this.setVisibilityFilter}/>
+            <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter}/>}/>
         </Router>
       </div>
     );

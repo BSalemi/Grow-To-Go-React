@@ -1,10 +1,8 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+html, body {
+  background-color: blanchedalmond;
+  padding: 0px;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
   
 }
 
@@ -27,11 +25,6 @@ code {
   justify-content: space-evenly;
 }
 
-.plant-card {
-  
-  padding: 5px;
-}
-
 .plant-pic{
   border: 5px ridge brown;
   height: 393px;
@@ -41,7 +34,17 @@ code {
 .card-back{
   height: 393px;
   width: 324px;
-  border: 5px ridge brown
+  border: 5px ridge brown;
+  justify-content: left 
+}
+
+#search-input{
+  border: 2px ridge brown
+}
+
+.plant-price{
+  font-size: 10;
+  font-style: initial
 }
 
 .sort-menus{

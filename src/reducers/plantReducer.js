@@ -1,6 +1,6 @@
 import { FETCH_PLANTS } from '../actions/types'
 
-let initialState = {text: "", fetchedPlants: []}
+let initialState = {filter: null, fetchedPlants: []}
 
 export function plantReducer(state = initialState, action){
     switch(action.type){
@@ -8,8 +8,9 @@ export function plantReducer(state = initialState, action){
             return {
                 ...state,
                 fetchedPlants: action.payload
-            }
+            };
         default: 
             return state;
     }
+
 }

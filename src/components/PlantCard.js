@@ -44,10 +44,12 @@ class PlantCard extends Component {
         if(this.state.forward) {
             return (
                 <div className="card-front">
+                <br/>
                 <img onClick={this.flipPlantCard} className="plant-pic" alt="house-plant" src={this.props.image} />
-                <h2>{this.props.name}</h2>
-                <p>${this.props.price}</p>
+                <h3>{this.props.name}</h3>
+                <p className="plant-price">${this.props.price}</p>
                 <button data-plant-id={this.props.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
+                <br/>
                 </div>
             )
         } else {
@@ -66,7 +68,7 @@ class PlantCard extends Component {
 
     render() {
         return (
-            <div className="individual-plant">
+            <div>
                 {this.renderPlantCard()}
             </div>
         )

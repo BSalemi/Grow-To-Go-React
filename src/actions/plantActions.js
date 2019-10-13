@@ -11,3 +11,10 @@ export const fetchPlants = () => dispatch => {
         })  
     })
 }
+
+// export function visibilityFilter(filter){
+//     return {
+//         type: SET_VISIBILITY_FILTER
+//     }
+//     type: 
+// }
