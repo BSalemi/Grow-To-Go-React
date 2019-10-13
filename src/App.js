@@ -7,6 +7,10 @@ import CartPlantContainer from './containers/CartPlantContainer';
 import SearchBar from './components/SearchBar';
 import FilterOptions from './components/FilterOptions'
 import PlantShow from './components/PlantShow'
+import { USERS_URL} from './constants.js'
+import { loginUser } from './actions/userActions'
+import { connect } from 'react-redux';
+import { fetchPlants } from './actions/plantActions'
 
 
 
@@ -16,6 +20,21 @@ class App extends React.Component {
     search: "",
     visibilityFilter: null
   }
+
+  checkForUser(){
+    if(localStorage.loggedIn){
+        let id = localStorage.loggedIn
+        fetch(USERS_URL + "/" + id)
+        .then(res => res.json())
+        .then((user_data => {
+            loginUser(user_data)
+            fetchPlants()
+            })
+        );
+    } else {
+        this.props.history.push('/login');
+    }
+}
 
  updateSearch = (event) =>{
    this.setState({
@@ -27,6 +46,10 @@ class App extends React.Component {
    this.setState({
      visibilityFilter: event.target.value
    })
+ }
+
+ componentDidMount(){
+   this.checkForUser()
  }
 
 
@@ -59,4 +82,4 @@ class App extends React.Component {
   }
 
 
-export default App;
+export default connect(null, {loginUser, fetchPlants})(App);

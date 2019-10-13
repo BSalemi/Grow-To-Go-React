@@ -3,7 +3,7 @@ import { fetchPlants } from '../actions/plantActions'
 import { loginUser } from '../actions/userActions'
 import { connect } from 'react-redux'
 import PlantCard from '../components/PlantCard'
-import { USERS_URL} from '../constants.js'
+
 
 
 class PlantContainer extends Component {
@@ -11,30 +11,14 @@ class PlantContainer extends Component {
         super(props)
        
     }
-
     filterPlants(){
         return this.props.plants.fetchedPlants.filter(plantObj => {
             return plantObj.name.toLowerCase().includes(this.props.search.toLowerCase())
         })  
     }
 
-    checkForUser(){
-        if(localStorage.loggedIn){
-            let id = localStorage.loggedIn
-            fetch(USERS_URL + "/" + id)
-            .then(res => res.json())
-            .then((user_data => {
-                this.props.loginUser(user_data, this.props.history)
-                this.props.fetchPlants()
-                })
-            );
-        } else {
-            this.props.history.push('/login');
-        }
-    }
-
     componentDidMount(){
-        this.checkForUser()
+        this.props.fetchPlants()
     }
         
     filterVisiblePlants = () => {

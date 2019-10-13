@@ -1,7 +1,6 @@
 import { LOGIN_USER, ADD_CART_PLANT, } from './types'
 
-export function loginUser(user, history) {
-    history.push('/')  
+export function loginUser(user) {
     return {
         type: LOGIN_USER,
         user
