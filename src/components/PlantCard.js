@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CART_PLANTS_URL } from '../constants.js'
 import { addCartPlant } from '../actions/userActions'
+import { Link } from 'react-router-dom'
 
 class PlantCard extends Component {
 
@@ -43,14 +44,17 @@ class PlantCard extends Component {
     renderPlantCard() {
         if(this.state.forward) {
             return (
+                <>
                 <div className="card-front">
                 <br/>
                 <img onClick={this.flipPlantCard} className="plant-pic" alt="house-plant" src={this.props.image} />
-                <h3>{this.props.name}</h3>
+                </div>
+                <>
+                <Link to={"/plants/" + this.props.id}> <h3>{this.props.name}</h3></Link>
                 <p className="plant-price">${this.props.price}</p>
                 <button data-plant-id={this.props.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
-                <br/>
-                </div>
+                </>
+                </>
             )
         } else {
             return (

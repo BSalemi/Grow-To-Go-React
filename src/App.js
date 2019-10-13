@@ -44,12 +44,13 @@ class App extends React.Component {
             </div>
             </Link>
             </div>
-            <Route path="/plants/:id" component={PlantShow} />
+            
             <CartPlantContainer/>
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <SearchBar updateSearch={this.updateSearch}/>
             <br/>
             <FilterOptions setVisibilityFilter={this.setVisibilityFilter}/>
+            <Route exact path="/plants/:id" component={PlantShow} />
             <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter}/>}/>
         </Router>
       </div>
