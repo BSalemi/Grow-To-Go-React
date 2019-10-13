@@ -6,6 +6,7 @@ import PlantContainer from './containers/PlantContainer';
 import CartPlantContainer from './containers/CartPlantContainer';
 import SearchBar from './components/SearchBar';
 import FilterOptions from './components/FilterOptions'
+import PlantShow from './components/PlantShow'
 
 
 
@@ -23,12 +24,9 @@ class App extends React.Component {
  }
 
  setVisibilityFilter = (event) => {
-   event.preventDefault()
-   console.log(event.target.value)
    this.setState({
      visibilityFilter: event.target.value
    })
-   console.log(this.state.visibilityFilter, "visibility")
  }
 
 
@@ -46,6 +44,7 @@ class App extends React.Component {
             </div>
             </Link>
             </div>
+            <Route path="/plants/:id" component={PlantShow} />
             <CartPlantContainer/>
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <SearchBar updateSearch={this.updateSearch}/>
