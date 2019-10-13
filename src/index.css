@@ -31,6 +31,21 @@ code {
   width:324px
 }
 
+.plant-show-container-left{
+ position: absolute;
+ left: 50px;
+}
+
+.plant-show-container-right{
+  position:absolute;
+  right: 550px;
+  top: 250px
+}
+
+.plant-show-pic{
+  border: 5px ridge brown;
+}
+
 .card-back{
   height: 393px;
   width: 324px;

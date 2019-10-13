@@ -37,26 +37,30 @@ class PlantShow extends Component {
         let plant = this.props.plants.foundPlant
         if(plant){
             return(
-                <div className="plant-show-container">
-                <h3>{plant.name}</h3>
-                <img className="plant-show-pic" alt="house-plant" src={plant.image} />
-                <ul className="plant-attributes">
-                    <li>${plant.price}</li>
-                    <li><strong>Size:</strong> {plant.size} </li>
-                    <li><strong>Price:</strong> ${plant.price}</li>
-                    <li><strong>Species:</strong> {plant.species}</li> 
-                    <li><strong>Experience Level:</strong> {plant.exp_level}</li>
-                    <li><strong>Light Required:</strong> {plant.light_required}</li>
-                    <li><strong>Pet Friendly:</strong> {plant.pet_friendly ? "This product is safe for pets" : "This product is toxic to pets"}</li>
-                </ul>
-                <button data-plant-id={plant.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
-            </div> 
+                <>
+                <div className="plant-show-container-left">
+                    <img className="plant-show-pic" alt="house-plant" src={plant.image} />
+                </div>
+                <div className="plant-show-container-right">
+                    <h3>{plant.name}</h3>
+                    <ul className="plant-attributes">
+                        <p><strong>Price:</strong> ${plant.price}</p>
+                        <p><strong>Size:</strong> {plant.size}</p>
+                        <p><strong>Species:</strong> {plant.species}</p>
+                        <p><strong>Experience Level:</strong> {plant.exp_level}</p>
+                        <p><strong>Light Required:</strong> {plant.light_required}</p>
+                        <p><strong>Pet Friendly:</strong> {plant.pet_friendly ? "This product is safe for pets" : "This product is toxic to pets"}</p>
+                    </ul>
+                    <button data-plant-id={plant.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
+                </div> 
+                </>
             )      
         } else {
             return(
                     <> 
-                   "Oops! No plant with that ID was found."
-                   <Link to="/">Home </Link>
+                    No plant with that ID was found.
+                    <br/>
+                   <Link to="/">Return Home </Link>
                    </>  
             )
         }
