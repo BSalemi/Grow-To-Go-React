@@ -114,24 +114,20 @@ a, a:active, a:visited {
   font-size: 85%
 }
 
-#remove-cart-plant{
-  
-}
+
 
 #total-checkout{
+  padding: 5px;
   display: inline-block
 }
 
-#total{
-  font-size: 85%
-}
+
 
 #checkout{
-  position: relative;
   background-color:lightgray;
   border: ridge black;
   height: auto;
   width: max-content;
   color: black;
-  font-size: 15px;
+  font-size: 85%;
 }

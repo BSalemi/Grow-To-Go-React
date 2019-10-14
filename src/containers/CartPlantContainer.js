@@ -31,6 +31,7 @@ class CartPlantContainer extends Component {
 
    
     generateCartPlants = () => {
+        console.log(this.props.user.carts[0], "carts")
         const currentCart = this.props.user.carts[this.props.user.carts.length - 1].cart_plants
         console.log(currentCart, "currentCart")
         const cartPlantData = currentCart.map(cart_plant => { 
@@ -55,7 +56,7 @@ class CartPlantContainer extends Component {
                     {this.renderCart()}
                     {this.props.user.carts && this.generateCartPlants()}
                 </div>
-                <div id="total-checkout"><p id="total">Total - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}</p> <button id="checkout">Checkout</button>
+                <div id="total-checkout">Total - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}<button id="checkout">Checkout</button>
                 </div>
                 
               </div>
