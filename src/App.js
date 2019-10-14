@@ -67,7 +67,7 @@ class App extends React.Component {
             </div>
             </Link>
             </div>
-            <Logout/>
+            <Logout history={this.history}/>
             <CartPlantContainer/>
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <SearchBar updateSearch={this.updateSearch}/>
