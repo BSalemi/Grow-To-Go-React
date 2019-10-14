@@ -54,6 +54,7 @@ class CartPlantContainer extends Component {
                 {this.renderCart()}
                 {this.props.user.carts && this.generateCartPlants()}
                 Total - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}
+                <button id="checkout">Checkout</button>
               </div>
             </div>
         )
