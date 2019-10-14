@@ -20,8 +20,7 @@ class CartPlantContainer extends Component {
         }
     }
 
-    handleOnClick = (event) => {
-        console.log(event, "event")
+    handleOnClick = () => {
         this.setState(prevState => {
             return {
             visible: !prevState.visible
@@ -29,8 +28,7 @@ class CartPlantContainer extends Component {
         })
     }
 
-    componentDidMount(){
-    }
+   
     generateCartPlants = () => {
         const currentCart = this.props.user.carts[this.props.user.carts.length - 1].cart_plants
         console.log(currentCart, "currentCart")
@@ -49,12 +47,13 @@ class CartPlantContainer extends Component {
        
         return (
             <div className="cart-container">
-               <button id='cart-btn' onClick={event => this.handleOnClick(event)}><img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart-loaded.png"/></button>
+               <button id='cart-btn' onClick={this.handleOnClick}><img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart-loaded.png"/></button>
                
               
-              <div id="cart-box">
+              <div id="cart-box" onClick={this.handleOnClick}>
                 {this.renderCart()}
                 {this.props.user.carts && this.generateCartPlants()}
+                Total - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}
               </div>
             </div>
         )
