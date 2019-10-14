@@ -43,14 +43,14 @@ class PlantShow extends Component {
                 </div>
                 <div className="plant-show-container-right">
                     <h3>{plant.name}</h3>
-                    <ul className="plant-attributes">
+                    {/* <ul className="plant-attributes"> */}
                         <p><strong>Price:</strong> ${plant.price}</p>
                         <p><strong>Size:</strong> {plant.size}</p>
                         <p><strong>Species:</strong> {plant.species}</p>
                         <p><strong>Experience Level:</strong> {plant.exp_level}</p>
                         <p><strong>Light Required:</strong> {plant.light_required}</p>
-                        <p><strong>Pet Friendly:</strong> {plant.pet_friendly ? "This product is safe for pets" : "This product is toxic to pets"}</p>
-                    </ul>
+                        <p><strong>Pet Friendly:</strong> {plant.pet_friendly ? "Yes. This plant is safe for pets" : "No. This plant is toxic to pets"}</p>
+                    {/* </ul> */}
                     <button data-plant-id={plant.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
                 </div> 
                 </>
