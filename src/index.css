@@ -47,6 +47,8 @@ a:link {
 
 .plant-show-pic{
   border: 5px ridge brown;
+  height: 393px;
+  width: 324 px;
 }
 
 
@@ -73,4 +75,11 @@ a:hover {
 
 a, a:active, a:visited {
   color: brown;
+}
+
+#cart-btn{
+  position:absolute;
+  top:70px;
+  right: 50px;
+  background-color: blanchedalmond
 }

@@ -3,6 +3,9 @@ import {connect} from 'react-redux'
 import CartPlant from '../components/CartPlants'
 
 class CartPlantContainer extends Component {
+
+
+    
     
     // generateCartPlants = () => {
     //     const currentCart = this.props.user.carts[this.props.user.carts.length - 1]
@@ -21,6 +24,7 @@ class CartPlantContainer extends Component {
        
         return (
             <div>
+               <button id='cart-btn'><img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart-loaded.png"/></button>
               {/* {this.generateCartPlants()} */}
             </div>
         )
