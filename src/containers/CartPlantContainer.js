@@ -1,12 +1,36 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import CartPlant from '../components/CartPlants'
+import CartPlants from '../components/CartPlants'
 
 class CartPlantContainer extends Component {
 
+   
 
+    state = {
+        visible: false
+    }
     
-    
+    renderCart(){
+        let cartContainer = document.getElementById("cart-box")
+        console.log(cartContainer, "cartContainer")
+        if(this.state.visible && cartContainer){
+            cartContainer.style.display = "block"
+        } else if (!this.state.visible && cartContainer){
+            cartContainer.style.display = "none"
+        }
+    }
+
+    handleOnClick = (event) => {
+        console.log(event, "event")
+        this.setState(prevState => {
+            return {
+            visible: !prevState.visible
+            }
+        })
+    }
+
+    componentDidMount(){
+    }
     // generateCartPlants = () => {
     //     const currentCart = this.props.user.carts[this.props.user.carts.length - 1]
     //     const cartPlantData = currentCart.cart_plants.map(cart_plant => { 
@@ -23,9 +47,14 @@ class CartPlantContainer extends Component {
         console.log(this.props.user.carts[this.props.user.carts.length-1].cart_plants, "user")
        
         return (
-            <div>
-               <button id='cart-btn'><img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart-loaded.png"/></button>
+            <div className="cart-container">
+               <button id='cart-btn' onClick={event => this.handleOnClick(event)}><img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart-loaded.png"/></button>
+               
               {/* {this.generateCartPlants()} */}
+              <div id="cart-box">
+                {this.renderCart()}
+                <CartPlants/>
+              </div>
             </div>
         )
     }

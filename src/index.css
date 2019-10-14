@@ -51,6 +51,18 @@ a:link {
   width: 324 px;
 }
 
+#cart-box{
+  border: 5px ridge brown;
+  background-color: white;
+  position:absolute;
+  top:70px;
+  right: 25px;
+  overflow: scroll;
+  height: auto;
+  max-height: 30em;
+  display: none;
+  justify-content: center
+}
 
 
 #search-input{
