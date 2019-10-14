@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {logoutUser} from '../actions/userActions'
 import {connect} from 'react-redux'
-
+import {logoutIcon} from '../constants.js'
+ 
 class Logout extends Component {
 
     
@@ -28,7 +29,7 @@ class Logout extends Component {
         return (
             <div>
                 <div class="logout-btn">
-                    <button id="logout" onClick={this.handleOnClick}><img alt="logout button" src="http://icons.iconarchive.com/icons/icons8/windows-8/32/User-Interface-Logout-icon.png"/></button>
+                    <button id="logout" onClick={this.handleOnClick}><img alt="logout button" src={`${logoutIcon}`}/></button>
                 </div>
             </div>
         )

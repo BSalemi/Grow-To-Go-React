@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import CartPlant from '../components/CartPlant'
+import {cartIcon} from '../constants.js'
 
 class CartPlantContainer extends Component {
 
@@ -47,16 +48,16 @@ class CartPlantContainer extends Component {
        
         return (
             <div className="cart-container">
-               <button id='cart-btn' onClick={this.handleOnClick}><img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart-loaded.png"/></button>
-               
+               <button id='cart-btn' onClick={this.handleOnClick}><img src={`${cartIcon}`}/></button>
               
               <div id="cart-box" >
                 <div id="users-cart" onClick={this.handleOnClick}>
                     {this.renderCart()}
                     {this.props.user.carts && this.generateCartPlants()}
-                    Total - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}
                 </div>
-                <button id="checkout">Checkout</button>
+                <div id="total-checkout"><p id="total">Total - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}</p> <button id="checkout">Checkout</button>
+                </div>
+                
               </div>
             </div>
         )

@@ -103,3 +103,28 @@ a, a:active, a:visited {
   height: 50px;
   background-color: blanchedalmond;
 }
+
+#users-cart-plants{
+  align-content: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 85%
+}
+
+#total-checkout{
+  display: inline-block
+}
+
+#total{
+  font-size: 85%
+}
+
+#checkout{
+  position: relative;
+  background-color:lightgray;
+  border: ridge black;
+  height: auto;
+  width: max-content;
+  color: black;
+  font-size: 15px;
+}

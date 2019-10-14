@@ -8,26 +8,28 @@ class PlantCard extends Component {
 
 
     addToCart = event => {
-        event.preventDefault()
-        console.log("plant_id", event.target.dataset.plantId)
-        let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
-        console.log("cartId", cartId)
-        const cart_plant = {
-            cart_id: cartId,
-            plant_id: event.target.dataset.plantId
+        // event.preventDefault()
+        console.log("props user carts", this.props.user.carts)
+        if(this.props.user) {
+            let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
+            console.log("cartId", cartId)
+            const cart_plant = {
+                cart_id: cartId,
+                plant_id: event.target.dataset.plantId
+            }
+            fetch(CART_PLANTS_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify(cart_plant)
+            })
+            .then(res => res.json())
+            .then((user_data) => {
+                this.props.addCartPlant(user_data, cart_plant)
+            })
         }
-        fetch(CART_PLANTS_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify(cart_plant)
-        })
-        .then(res => res.json())
-        .then((user_data) => {
-            this.props.addCartPlant(user_data, cart_plant)
-        })
     }
 
     renderPlantCard() {
