@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { fetchPlants } from '../actions/plantActions'
 import { loginUser } from '../actions/userActions'
 import { connect } from 'react-redux'
-import PlantCard from '../components/PlantCard'
+import PlantCard from '../components/Plant'
 import { USERS_URL} from '../constants.js'
 
 

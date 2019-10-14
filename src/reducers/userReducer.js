@@ -27,10 +27,11 @@ export function userReducer(state = initialState, action) {
                 initialState
             }
         case REMOVE_CART_PLANT:
+            console.log(JSON.stringify(action.user))
             return{
                 ...state,
-                user: {...state.user, carts:[state.user.carts.filter(cart_plant => cart_plant.id !== action.id)]}
-            } 
+                user: action.user
+            }
         default:
             return state;
     }

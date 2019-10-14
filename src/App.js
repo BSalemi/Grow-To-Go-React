@@ -7,8 +7,6 @@ import CartPlantContainer from './containers/CartPlantContainer';
 import SearchBar from './components/SearchBar';
 import FilterOptions from './components/FilterOptions'
 import PlantShow from './components/PlantShow'
-import { USERS_URL} from './constants.js'
-import { loginUser } from './actions/userActions'
 import Logout from './components/Logout';
 
 

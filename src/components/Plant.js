@@ -58,6 +58,7 @@ class PlantCard extends Component {
     }
 }
 
+
 const mapStateToProps = state => ({
     user: state.user.user
 })

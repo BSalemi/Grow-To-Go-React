@@ -1,11 +1,29 @@
 import React, { Component } from 'react'
-import {addIcon, removeIcon} from '../constants.js'
-export default class CartPlant extends Component {
+import {addIcon, removeIcon, CART_PLANTS_URL} from '../constants.js'
+import { removeCartPlant } from '../actions/userActions'
+import { connect } from 'react-redux'
+
+class CartPlant extends Component {
 
 
-    handleRemoveCart(){
-        
+    handleRemoveCart = (event) => {
+        let cartPlant = event.target.dataset.cartPlantId
+        fetch(CART_PLANTS_URL + "/" + cartPlant, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                id: cartPlant,
+            }),
+        })
+        .then(res => res.json())
+        .then((user_data) => {
+            this.props.removeCartPlant(user_data)
+        })
     }
+    
     render() {
         return (
             <div id="users-cart-plants">
@@ -14,3 +32,5 @@ export default class CartPlant extends Component {
         )
     }
 }
+
+export default connect(null, {removeCartPlant})(CartPlant)

@@ -37,6 +37,7 @@ class LoginForm extends React.Component {
         })
         .then(res => res.json())
         .then((user_data) => {
+            console.log(this.props, "this props ")
             this.props.loginUser(user_data, this.props.history)
             localStorage.loggedIn = user_data.id
             this.props.history.push('/')

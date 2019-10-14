@@ -31,9 +31,8 @@ class CartPlantContainer extends Component {
 
    
     generateCartPlants = () => {
-        console.log(this.props.user.carts[0], "carts")
         const currentCart = this.props.user.carts[this.props.user.carts.length - 1].cart_plants
-        console.log(currentCart, "currentCart")
+                
         const cartPlantData = currentCart.map(cart_plant => { 
         return <div className="cart-plant-card" key={cart_plant.id}>
             <CartPlant id={cart_plant.id} price={cart_plant.plant.price} name={cart_plant.plant.name}/>
@@ -43,13 +42,10 @@ class CartPlantContainer extends Component {
     }
     
     render() {
-        
-        // console.log(currentCart.cart_plants, "current cart cart plants")
-        console.log(this.props.user)
        
         return (
             <div className="cart-container">
-               <button id='cart-btn' onClick={this.handleOnClick}><img src={`${cartIcon}`}/></button>
+               <button id='cart-btn' onClick={this.handleOnClick}><img alt="cart" src={`${cartIcon}`}/></button>
               
               <div id="cart-box" >
                 <div id="users-cart" onClick={this.handleOnClick}>
