@@ -9,6 +9,7 @@ import FilterOptions from './components/FilterOptions'
 import PlantShow from './components/PlantShow'
 import { USERS_URL} from './constants.js'
 import { loginUser } from './actions/userActions'
+import Logout from './components/Logout';
 
 
 
@@ -18,6 +19,7 @@ class App extends React.Component {
     search: "",
     visibilityFilter: null
   }
+
 
 //   checkForUser(){
 //     if(localStorage.loggedIn){
@@ -65,7 +67,7 @@ class App extends React.Component {
             </div>
             </Link>
             </div>
-            
+            <Logout/>
             <CartPlantContainer/>
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <SearchBar updateSearch={this.updateSearch}/>

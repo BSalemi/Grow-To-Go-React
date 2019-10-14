@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import CartPlants from '../components/CartPlants'
+import CartPlant from '../components/CartPlant'
 
 class CartPlantContainer extends Component {
 
@@ -53,7 +53,7 @@ class CartPlantContainer extends Component {
               {/* {this.generateCartPlants()} */}
               <div id="cart-box">
                 {this.renderCart()}
-                <CartPlants/>
+                <CartPlant/>
               </div>
             </div>
         )
