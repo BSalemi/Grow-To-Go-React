@@ -7,10 +7,10 @@ import {findPlant } from '../actions/plantActions'
 
 
 class PlantShow extends Component {
-    constructor(props){
-        super(props)
-        console.log(props,"props")
-    }
+    // constructor(props){
+    //     super(props)
+    //     console.log(props,"props")
+    // }
 
     componentDidMount(){
         this.props.findPlant(this.props.match.params.id)
@@ -19,9 +19,8 @@ class PlantShow extends Component {
     
     addToCart = event => {
         event.preventDefault()
-        console.log("this props", this.props.user)
-        if(this.props.user.carts){
-            let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
+        console.log("this props", this.props.user.user)
+            let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
             console.log("cartId", cartId)
             const cart_plant = {
                 cart_id: cartId,
@@ -40,7 +39,6 @@ class PlantShow extends Component {
                 console.log(user_data, "json")
                 this.props.addCartPlant(user_data)
             })
-        }
     }
         
        

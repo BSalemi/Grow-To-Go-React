@@ -8,6 +8,17 @@ class CartPlantContainer extends Component {
 
     // let plantsObj = {}
    
+    state = {
+        visible: false
+    }
+
+    handleOnClick = () => {
+        this.setState(prevState => {
+            return {
+            visible: !prevState.visible
+            }
+        })
+    }
 
     handleCheckout = (event) => {
         let currentCart = this.props.user.carts[this.props.user.carts.length - 1]
@@ -29,13 +40,6 @@ class CartPlantContainer extends Component {
         })
     }} 
     
-
-
-
-    state = {
-        visible: false
-    }
-    
     renderCart(){
         let cartContainer = document.getElementById("cart-box")
         console.log(cartContainer, "cartContainer")
@@ -46,24 +50,12 @@ class CartPlantContainer extends Component {
         }
     }
 
-    handleOnClick = () => {
-        this.setState(prevState => {
-            return {
-            visible: !prevState.visible
-            }
-        })
-    }
-
-
-    
    
     generateCartPlants = () => {
-
         const currentCart = this.props.user.carts[this.props.user.carts.length - 1].cart_plants
-
         const cartPlantData = currentCart.map(cart_plant => { 
         return <div className="cart-plant-card" key={cart_plant.id}>
-            <CartPlant id={cart_plant.id} price={cart_plant.plant.price} name={cart_plant.plant.name}/>
+            <CartPlant id={cart_plant.id} plant_id={cart_plant.plant_id} price={cart_plant.plant.price} name={cart_plant.plant.name}/>
         </div>
         })
         return cartPlantData
@@ -82,7 +74,7 @@ class CartPlantContainer extends Component {
                     {this.props.user.carts && this.generateCartPlants()}
                 </div>
                 <div id="total-checkout">
-                    <strong>Total</strong> - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}<button onClick={this.handleCheckout} id="checkout">Checkout</button>
+                    <strong id="total">Total</strong> - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}             <button onClick={this.handleCheckout} id="checkout">Checkout</button>
                 </div>
                 
               </div>

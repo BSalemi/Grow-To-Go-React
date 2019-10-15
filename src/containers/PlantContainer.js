@@ -23,11 +23,6 @@ class PlantContainer extends Component {
         })  
     }
 
-   
-
-    componentDidMount(){
-     
-    }
         
     filterVisiblePlants = () => { 
         switch(this.props.visibilityFilter){

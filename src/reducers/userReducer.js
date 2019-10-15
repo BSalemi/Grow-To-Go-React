@@ -26,7 +26,6 @@ export function userReducer(state = initialState, action) {
             return initialState
             
         case REMOVE_CART_PLANT:
-            console.log(JSON.stringify(action.user))
             return{
                 ...state,
                 user: action.user

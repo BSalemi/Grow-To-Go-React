@@ -124,7 +124,7 @@ a, a:active, a:visited {
 
 
 #checkout{
-  background-color:lightgray;
+  padding: 3px;
   border: ridge black;
   height: auto;
   width: max-content;
@@ -133,6 +133,11 @@ a, a:active, a:visited {
   align-content:right
 }
 
+#total{
+
+  padding:3px;
+  
+}
 #remove-cart-plant{
   padding: 3px
 }
