@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 import LoginForm from './components/LoginForm'
 import PlantContainer from './containers/PlantContainer';
 import CartPlantContainer from './containers/CartPlantContainer';
@@ -8,7 +8,10 @@ import SearchBar from './components/SearchBar';
 import FilterOptions from './components/FilterOptions'
 import PlantShow from './components/PlantShow'
 import Logout from './components/Logout';
-
+import {USERS_URL} from './constants'
+import {loginUser} from './actions/userActions'
+import {fetchPlants} from './actions/plantActions'
+import {connect} from 'react-redux'
 
 
 class App extends React.Component {
@@ -20,20 +23,20 @@ class App extends React.Component {
   }
 
 
-//   checkForUser(){
-//     if(localStorage.loggedIn){
-//         let id = localStorage.loggedIn
-//         fetch(USERS_URL + "/" + id)
-//         .then(res => res.json())
-//         .then((user_data => {
-//             this.props.loginUser(user_data, this.props.history)
-//             this.props.fetchPlants()
-//             })
-//         );
-//     } else {
-//         this.props.history.push('/login');
-//     }
-// }
+  checkForUser(){
+    if(localStorage.loggedIn){
+        let id = localStorage.loggedIn
+        fetch(USERS_URL + "/" + id)
+        .then(res => res.json())
+        .then((user_data => {
+            this.props.loginUser(user_data, this.props.history)
+            this.props.fetchPlants()
+            })
+        );
+    } else {
+        this.props.history.push('/login');
+    }
+}
 
  updateSearch = (event) =>{
    this.setState({
@@ -56,15 +59,15 @@ class App extends React.Component {
   }
 
   
-//  componentDidMount(){
-//    this.checkForUser()
-//  }
+ componentDidMount(){
+   this.checkForUser()
+ }
 
 
   render(){
     return (
       <div className="App">
-        <Router>
+        
           <div>
             <Link to="/">
             <div id="app-header">
@@ -83,11 +86,11 @@ class App extends React.Component {
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <Route exact path="/plants/:id" component={PlantShow} />
             <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter} petFriendly={this.state.petFriendly}/>}/>
-        </Router>
+        
       </div>
     );
   }
   }
 
 
-export default App;
+export default connect(null, {loginUser, fetchPlants})(withRouter(App));

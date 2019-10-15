@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { fetchPlants } from '../actions/plantActions'
-import { loginUser } from '../actions/userActions'
 import { connect } from 'react-redux'
 import Plant from '../components/Plant'
-import { USERS_URL} from '../constants.js'
+
 
 
 
@@ -25,23 +23,10 @@ class PlantContainer extends Component {
         })  
     }
 
-    checkForUser(){
-    if(localStorage.loggedIn){
-        let id = localStorage.loggedIn
-        fetch(USERS_URL + "/" + id)
-        .then(res => res.json())
-        .then((user_data => {
-            this.props.loginUser(user_data, this.props.history)
-            this.props.fetchPlants()
-            })
-        );
-    } else {
-        this.props.history.push('/login');
-    }
-}
+   
 
     componentDidMount(){
-        this.checkForUser()
+     
     }
         
     filterVisiblePlants = () => { 
@@ -113,4 +98,4 @@ const mapStateToProps = state => ({
     plants: state.plants
 })
 
-export default connect(mapStateToProps, {fetchPlants, loginUser})(PlantContainer)
+export default connect(mapStateToProps)(PlantContainer)

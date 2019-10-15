@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { CART_PLANTS_URL } from '../constants.js'
-import { USERS_URL} from '../constants.js'
-import { loginUser, addCartPlant } from '../actions/userActions'
-import { fetchPlants, findPlant } from '../actions/plantActions'
+import {addCartPlant } from '../actions/userActions'
+import {findPlant } from '../actions/plantActions'
 
 
 class PlantShow extends Component {
@@ -13,22 +12,8 @@ class PlantShow extends Component {
         console.log(props,"props")
     }
 
-    checkForUser(){
-        if(this.props.user){
-            let id = localStorage.loggedIn
-            fetch(USERS_URL + "/" + id)
-            .then(res => res.json())
-            .then((user_data => {
-                this.props.findPlant(this.props.match.params.id)
-                })
-            );
-        } else {
-            this.props.history.push('/login');
-        }
-    }
-
     componentDidMount(){
-        this.checkForUser()
+        this.props.findPlant(this.props.match.params.id)
     }
 
     
@@ -108,4 +93,4 @@ const mapStateToProps = (state) => ({
     plants: state.plants
 })
     
-export default connect(mapStateToProps, {loginUser, fetchPlants, findPlant, addCartPlant})(PlantShow)
+export default connect(mapStateToProps, {findPlant, addCartPlant})(PlantShow)
