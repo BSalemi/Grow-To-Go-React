@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
 
@@ -45,7 +45,7 @@ const FilterOptions = (props) => {
             </div>
             <div className="sort-menu-children">
                 <label value="select-pet-friendly"><strong>Pet Friendly: </strong></label>
-                <input onChange={props.setVisibilityFilter} type="checkbox" id="pet-friendly-checkbox" value="pet-friendly"/>
+                <input onClick={props.setPetFriendly}  defaultChecked={false} type="checkbox" id="pet-friendly-checkbox" value="pet-friendly"/>
             </div>
         </div>
         )

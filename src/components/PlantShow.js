@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { CART_PLANTS_URL } from '../constants.js'
-import { addCartPlant } from '../actions/userActions'
 import { USERS_URL} from '../constants.js'
-import { loginUser } from '../actions/userActions'
-import { fetchPlants } from '../actions/plantActions'
-import { findPlant} from '../actions/plantActions'
+import { loginUser, addCartPlant } from '../actions/userActions'
+import { fetchPlants, findPlant } from '../actions/plantActions'
+
 
 class PlantShow extends Component {
     constructor(props){
@@ -32,6 +31,34 @@ class PlantShow extends Component {
         this.checkForUser()
     }
 
+    
+    // addToCart = event => {
+    //     event.preventDefault()
+    //     console.log("this props", this.props.user)
+    //     if(this.props.user.carts){
+    //         let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
+    //         console.log("cartId", cartId)
+    //         const cart_plant = {
+    //             cart_id: cartId,
+    //             plant_id: event.target.dataset.plantId
+    //         }
+    //         fetch(CART_PLANTS_URL, {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 Accept: "application/json"
+    //             },
+    //             body: JSON.stringify(cart_plant)
+    //         })
+    //         .then(res => res.json())
+    //         .then((user_data) => {
+    //             console.log(user_data, "json")
+    //             this.props.addCartPlant(user_data)
+    //         })
+    //     }
+    // }
+        
+       
   
     renderPlant =() => {
         let plant = this.props.plants.foundPlant
@@ -66,9 +93,6 @@ class PlantShow extends Component {
         }
     }
      
-
-     
-
     
     render(){
         console.log(this.props.plants.foundPlant, "plant")
@@ -84,4 +108,4 @@ const mapStateToProps = (state) => ({
     plants: state.plants
 })
     
-export default connect(mapStateToProps, {loginUser, fetchPlants, findPlant})(PlantShow)
+export default connect(mapStateToProps, {loginUser, fetchPlants, findPlant, addCartPlant})(PlantShow)

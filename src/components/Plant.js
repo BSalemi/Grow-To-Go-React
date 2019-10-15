@@ -38,7 +38,7 @@ class PlantCard extends Component {
                 <>
                 <div>
                 <br/>
-                <img onClick={this.flipPlantCard} className="plant-pic" alt="house-plant" src={this.props.image} />
+                <img className="plant-pic" alt="house-plant" src={this.props.image} />
                 </div>
                 <>
                 <Link to={"/plants/" + this.props.id}> <h3>{this.props.name}</h3></Link>

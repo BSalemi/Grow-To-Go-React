@@ -5,7 +5,13 @@ import {cartIcon} from '../constants.js'
 
 class CartPlantContainer extends Component {
 
+    // let plantsObj = {}
    
+
+
+    
+
+
 
     state = {
         visible: false
@@ -29,10 +35,13 @@ class CartPlantContainer extends Component {
         })
     }
 
+
+    
    
     generateCartPlants = () => {
+
         const currentCart = this.props.user.carts[this.props.user.carts.length - 1].cart_plants
-                
+
         const cartPlantData = currentCart.map(cart_plant => { 
         return <div className="cart-plant-card" key={cart_plant.id}>
             <CartPlant id={cart_plant.id} price={cart_plant.plant.price} name={cart_plant.plant.name}/>
@@ -52,7 +61,7 @@ class CartPlantContainer extends Component {
                     {this.renderCart()}
                     {this.props.user.carts && this.generateCartPlants()}
                 </div>
-                <div id="total-checkout">Total - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}<button id="checkout">Checkout</button>
+                <div id="total-checkout"><strong>Total</strong> - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}<button id="checkout">Checkout</button>
                 </div>
                 
               </div>

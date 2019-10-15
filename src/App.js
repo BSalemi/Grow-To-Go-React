@@ -15,7 +15,8 @@ class App extends React.Component {
   
   state = {
     search: "",
-    visibilityFilter: null
+    visibilityFilter: null,
+    petFriendly: false,
   }
 
 
@@ -46,6 +47,15 @@ class App extends React.Component {
    })
  }
 
+ setPetFriendly = () => {
+   this.setState(prevState => {
+     return {
+       petFriendly: !prevState.petFriendly
+       }
+   })
+  }
+
+  
 //  componentDidMount(){
 //    this.checkForUser()
 //  }
@@ -70,9 +80,9 @@ class App extends React.Component {
             <Route exact path="/login" component={LoginForm} history={this.history}/>
             <SearchBar updateSearch={this.updateSearch}/>
             <br/>
-            <FilterOptions setVisibilityFilter={this.setVisibilityFilter}/>
+            <FilterOptions setVisibilityFilter={this.setVisibilityFilter} setPetFriendly={this.setPetFriendly}/>
             <Route exact path="/plants/:id" component={PlantShow} />
-            <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter}/>}/>
+            <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter} petFriendly={this.state.petFriendly}/>}/>
         </Router>
       </div>
     );

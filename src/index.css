@@ -131,3 +131,11 @@ a, a:active, a:visited {
   color: black;
   font-size: 85%;
 }
+
+#remove-cart-plant{
+  padding: 3px
+}
+
+#add-cart-plant{
+  padding: 3px
+}

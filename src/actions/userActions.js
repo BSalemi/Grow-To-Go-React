@@ -2,7 +2,7 @@ import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT } from './ty
 
 export function loginUser(user, history) {
     console.log(history, "history loginUser")
-    // history.push('/')  
+    history.push('/')  
     return {
         type: LOGIN_USER,
         user
