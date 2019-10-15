@@ -77,10 +77,10 @@ class App extends React.Component {
             </div>
             <Logout history={this.history}/>
             <CartPlantContainer/>
-            <Route exact path="/login" component={LoginForm} history={this.history}/>
             <SearchBar updateSearch={this.updateSearch}/>
             <br/>
             <FilterOptions setVisibilityFilter={this.setVisibilityFilter} setPetFriendly={this.setPetFriendly}/>
+            <Route exact path="/login" component={LoginForm} history={this.history}/>
             <Route exact path="/plants/:id" component={PlantShow} />
             <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter} petFriendly={this.state.petFriendly}/>}/>
         </Router>

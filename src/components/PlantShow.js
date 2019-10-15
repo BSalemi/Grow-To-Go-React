@@ -32,31 +32,31 @@ class PlantShow extends Component {
     }
 
     
-    // addToCart = event => {
-    //     event.preventDefault()
-    //     console.log("this props", this.props.user)
-    //     if(this.props.user.carts){
-    //         let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
-    //         console.log("cartId", cartId)
-    //         const cart_plant = {
-    //             cart_id: cartId,
-    //             plant_id: event.target.dataset.plantId
-    //         }
-    //         fetch(CART_PLANTS_URL, {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 Accept: "application/json"
-    //             },
-    //             body: JSON.stringify(cart_plant)
-    //         })
-    //         .then(res => res.json())
-    //         .then((user_data) => {
-    //             console.log(user_data, "json")
-    //             this.props.addCartPlant(user_data)
-    //         })
-    //     }
-    // }
+    addToCart = event => {
+        event.preventDefault()
+        console.log("this props", this.props.user)
+        if(this.props.user.carts){
+            let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
+            console.log("cartId", cartId)
+            const cart_plant = {
+                cart_id: cartId,
+                plant_id: event.target.dataset.plantId
+            }
+            fetch(CART_PLANTS_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify(cart_plant)
+            })
+            .then(res => res.json())
+            .then((user_data) => {
+                console.log(user_data, "json")
+                this.props.addCartPlant(user_data)
+            })
+        }
+    }
         
        
   
