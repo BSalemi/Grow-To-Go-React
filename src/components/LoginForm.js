@@ -1,5 +1,6 @@
 import React from 'react'
 import { loginUser } from '../actions/userActions'
+import {fetchPlants} from '../actions/plantActions'
 import { connect } from 'react-redux'
 import {USERS_URL} from '../constants.js' 
 import { withRouter } from 'react-router-dom'
@@ -37,10 +38,10 @@ class LoginForm extends React.Component {
         })
         .then(res => res.json())
         .then((user_data) => {
-            console.log(this.props, "this props ")
             this.props.loginUser(user_data, this.props.history)
             localStorage.loggedIn = user_data.id
             this.props.history.push('/')
+            this.props.fetchPlants()
         })
     }  
 
@@ -60,4 +61,4 @@ class LoginForm extends React.Component {
 }
 
 
-export default connect(null, {loginUser})(withRouter(LoginForm))
+export default connect(null, {loginUser, fetchPlants})(withRouter(LoginForm))

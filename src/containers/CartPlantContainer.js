@@ -70,6 +70,7 @@ class CartPlantContainer extends Component {
     }
     
     render() {
+        console.log(this.props)
        
         return (
             <div className="cart-container">
@@ -77,10 +78,11 @@ class CartPlantContainer extends Component {
               
               <div id="cart-box" >
                 <div id="users-cart" onClick={this.handleOnClick}>
-                    {this.renderCart()}
+                    {this.props.user.carts && this.renderCart()}
                     {this.props.user.carts && this.generateCartPlants()}
                 </div>
-                <div id="total-checkout"><strong>Total</strong> - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}<button onClick={this.handleCheckout} id="checkout">Checkout</button>
+                <div id="total-checkout">
+                    <strong>Total</strong> - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}<button onClick={this.handleCheckout} id="checkout">Checkout</button>
                 </div>
                 
               </div>

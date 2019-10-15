@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {logoutUser} from '../actions/userActions'
 import {connect} from 'react-redux'
 import {logoutIcon} from '../constants.js'
+import {withRouter} from 'react-router-dom'
  
 class Logout extends Component {
 
@@ -20,7 +21,7 @@ class Logout extends Component {
     handleOnClick = () => {
         localStorage.clear('loggedIn')
         let user = this.props.user.user
-        console.log(user, "user in logout")
+        console.log(this.props, "props logout")
         this.props.logoutUser(user, this.props.history)
     }
      
@@ -40,4 +41,4 @@ const mapStateToProps = state => ({
     user: state.user
 })
 
-export default connect(mapStateToProps, {logoutUser})(Logout)
+export default connect(mapStateToProps, {logoutUser})(withRouter(Logout))

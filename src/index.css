@@ -130,6 +130,7 @@ a, a:active, a:visited {
   width: max-content;
   color: black;
   font-size: 85%;
+  align-content:right
 }
 
 #remove-cart-plant{
