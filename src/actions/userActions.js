@@ -1,4 +1,4 @@
-import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT } from './types'
+import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT, CHECKOUT } from './types'
 
 export function loginUser(user, history) {
     console.log(history, "history loginUser")
@@ -27,6 +27,13 @@ export function logoutUser(user, history){
 export function removeCartPlant(user){
     return{
         type: REMOVE_CART_PLANT,
+        user
+    }
+}
+
+export function checkout(user){
+    return {
+        type: CHECKOUT,
         user
     }
 }
