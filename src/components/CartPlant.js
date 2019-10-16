@@ -26,15 +26,12 @@ class CartPlant extends Component {
 
     addToCart = event => {
         event.preventDefault()
-        console.log("ADD CART PLANT", this.props.user)
         if(this.props.user.carts){
         let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
-        console.log("cartId", cartId)
         const cart_plant = {
             cart_id: cartId,
             plant_id: event.target.dataset.plantId
         }
-        console.log("cart_plant inside add to cart", cart_plant)
         fetch(CART_PLANTS_URL, {
             method: "POST",
             headers: {
@@ -45,17 +42,16 @@ class CartPlant extends Component {
         })
         .then(res => res.json())
         .then((user_data) => {
-            console.log(user_data, "ADD_CART_PLANT RESPONSE")
             this.props.addCartPlant(user_data)
         })
     }
     }
     
     render() {
-        console.log(this.props.plant_id, "props inside cart plant")
+        console.log(this.props.name, "props inside cart plant")
         return (
             <div id="users-cart-plants">
-                <img id="add-cart-plant" alt="add-cart-plant" src={`${addIcon}`} data-cart-plant-id={this.props.id} data-plant-id={this.props.plant_id} onClick={event => this.addToCart(event)}/><img id="remove-cart-plant" alt="remove-cart-plant" src={`${removeIcon}`} data-cart-plant-id={this.props.id} onClick={this.handleRemoveCart}/><strong>{this.props.name}</strong> - ${this.props.price}
+                <img id="add-cart-plant" alt="add-cart-plant" src={`${addIcon}`} data-cart-plant-id={this.props.id} data-plant-id={this.props.plant_id} onClick={event => this.addToCart(event)}/><img id="remove-cart-plant" alt="remove-cart-plant" src={`${removeIcon}`} data-cart-plant-id={this.props.id} onClick={this.handleRemoveCart}/><strong>{this.props.name}</strong> x{this.props.quantity} - $({this.props.price} * {this.props.quantity})
             </div>
         )
     }

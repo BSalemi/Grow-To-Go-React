@@ -7,10 +7,7 @@ import {findPlant } from '../actions/plantActions'
 
 
 class PlantShow extends Component {
-    // constructor(props){
-    //     super(props)
-    //     console.log(props,"props")
-    // }
+    
 
     componentDidMount(){
         this.props.findPlant(this.props.match.params.id)
@@ -19,26 +16,23 @@ class PlantShow extends Component {
     
     addToCart = event => {
         event.preventDefault()
-        console.log("this props", this.props.user.user)
-            let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
-            console.log("cartId", cartId)
-            const cart_plant = {
-                cart_id: cartId,
-                plant_id: event.target.dataset.plantId
-            }
-            fetch(CART_PLANTS_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                },
-                body: JSON.stringify(cart_plant)
+        let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
+        const cart_plant = {
+            cart_id: cartId,
+            plant_id: event.target.dataset.plantId
+        }
+        fetch(CART_PLANTS_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(cart_plant)
             })
             .then(res => res.json())
             .then((user_data) => {
-                console.log(user_data, "json")
-                this.props.addCartPlant(user_data)
-            })
+            this.props.addCartPlant(user_data)
+        })
     }
         
        

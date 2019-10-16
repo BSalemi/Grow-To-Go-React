@@ -42,7 +42,6 @@ class CartPlantContainer extends Component {
     
     renderCart(){
         let cartContainer = document.getElementById("cart-box")
-        console.log(cartContainer, "cartContainer")
         if(this.state.visible && cartContainer){
             cartContainer.style.display = "block"
         } else if (!this.state.visible && cartContainer){
@@ -52,17 +51,28 @@ class CartPlantContainer extends Component {
 
    
     generateCartPlants = () => {
+        let cartPlants = {}
         const currentCart = this.props.user.carts[this.props.user.carts.length - 1].cart_plants
-        const cartPlantData = currentCart.map(cart_plant => { 
-        return <div className="cart-plant-card" key={cart_plant.id}>
-            <CartPlant id={cart_plant.id} plant_id={cart_plant.plant_id} price={cart_plant.plant.price} name={cart_plant.plant.name}/>
-        </div>
+        currentCart.map(cart_plant => { 
+            if (!cartPlants[cart_plant.plant_id]){
+                cartPlants[cart_plant.plant_id] = [cart_plant]
+            } else {
+                cartPlants[cart_plant.plant_id].push(cart_plant)
+            }
         })
-        return cartPlantData
+        let results = []
+        for (let plant_id in cartPlants) {
+            let cart_plant = cartPlants[plant_id][0];
+            results.push(<div className="cart-plant-card" key={cart_plant.id}><CartPlant id={cart_plant.id} quantity={cartPlants[plant_id].length} plant_id={cart_plant.plant_id} price={cart_plant.plant.price} name={cart_plant.plant.name}/></div>)
+            console.log(results, "results")
+        }
+        return(
+            results
+        )
     }
     
     render() {
-        console.log(this.props)
+        console.log(this.props.user.carts, "user cart props")
        
         return (
             <div className="cart-container">
