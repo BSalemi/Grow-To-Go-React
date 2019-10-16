@@ -12,7 +12,7 @@ class CartPlantContainer extends Component {
         visible: false
     }
 
-    handleOnClick = () => {
+    handleOnMouse = () => {
         this.setState(prevState => {
             return {
             visible: !prevState.visible
@@ -76,10 +76,10 @@ class CartPlantContainer extends Component {
        
         return (
             <div className="cart-container">
-               <button id='cart-btn' onClick={this.handleOnClick}><img alt="cart" src={`${cartIcon}`}/></button>
+               <button id='cart-btn' onMouseOver={this.handleOnMouse}><img alt="cart" src={`${cartIcon}`}/></button>
               
               <div id="cart-box" >
-                <div id="users-cart" onClick={this.handleOnClick}>
+                <div id="users-cart" onMouseLeave={this.handleOnMouse}>
                     {this.props.user.carts && this.renderCart()}
                     {this.props.user.carts && this.generateCartPlants()}
                 </div>
