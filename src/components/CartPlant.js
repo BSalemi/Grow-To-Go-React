@@ -49,9 +49,10 @@ class CartPlant extends Component {
     
     render() {
         console.log(this.props.name, "props inside cart plant")
+        let total = (this.props.price * this.props.quantity)
         return (
             <div id="users-cart-plants">
-                <img id="add-cart-plant" alt="add-cart-plant" src={`${addIcon}`} data-cart-plant-id={this.props.id} data-plant-id={this.props.plant_id} onClick={event => this.addToCart(event)}/><img id="remove-cart-plant" alt="remove-cart-plant" src={`${removeIcon}`} data-cart-plant-id={this.props.id} onClick={this.handleRemoveCart}/><strong>{this.props.name}</strong> x{this.props.quantity} - $({this.props.price} * {this.props.quantity})
+                <img id="add-cart-plant" alt="add-cart-plant" src={`${addIcon}`} data-cart-plant-id={this.props.id} data-plant-id={this.props.plant_id} onClick={event => this.addToCart(event)}/><img id="remove-cart-plant" alt="remove-cart-plant" src={`${removeIcon}`} data-cart-plant-id={this.props.id} onClick={this.handleRemoveCart}/><strong>{this.props.name}</strong> x {this.props.quantity} - ${total}
             </div>
         )
     }
