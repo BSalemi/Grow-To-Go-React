@@ -9,10 +9,8 @@ class PlantCard extends Component {
 
     addToCart = event => {
         event.preventDefault()
-        console.log("this props", this.props.user)
         if(this.props.user.carts){
         let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
-        console.log("cartId", cartId)
         const cart_plant = {
             cart_id: cartId,
             plant_id: event.target.dataset.plantId
@@ -27,7 +25,6 @@ class PlantCard extends Component {
         })
         .then(res => res.json())
         .then((user_data) => {
-            console.log(user_data, "json")
             this.props.addCartPlant(user_data)
         })
     }

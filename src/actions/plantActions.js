@@ -23,9 +23,4 @@ export const findPlant = (id) => dispatch => {
     })
 }
 
-// export function visibilityFilter(filter){
-//     return {
-//         type: SET_VISIBILITY_FILTER
-//     }
-//     type: 
-// }
+

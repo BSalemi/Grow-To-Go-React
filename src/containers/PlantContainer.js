@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Plant from '../components/Plant'
 
-
-
-
 class PlantContainer extends Component {
    
   

@@ -21,7 +21,6 @@ class Logout extends Component {
     handleOnClick = () => {
         localStorage.clear('loggedIn')
         let user = this.props.user.user
-        console.log(this.props, "props logout")
         this.props.logoutUser(user, this.props.history)
     }
      

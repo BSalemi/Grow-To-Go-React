@@ -1,7 +1,6 @@
 import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT, CHECKOUT } from './types'
 
 export function loginUser(user, history) {
-    console.log(history, "history loginUser")
     history.push('/')  
     return {
         type: LOGIN_USER,

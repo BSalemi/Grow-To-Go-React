@@ -31,7 +31,6 @@ export function userReducer(state = initialState, action) {
                 user: action.user
             }
         case CHECKOUT:
-            console.log(JSON.stringify(action.user))
             return {
                 ...state,
                 user: action.user

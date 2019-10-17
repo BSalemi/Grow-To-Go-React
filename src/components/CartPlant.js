@@ -48,7 +48,6 @@ class CartPlant extends Component {
     }
     
     render() {
-        console.log(this.props.name, "props inside cart plant")
         let total = (this.props.price * this.props.quantity)
         return (
             <div id="users-cart-plants">
