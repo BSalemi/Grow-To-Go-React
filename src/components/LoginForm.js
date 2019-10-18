@@ -28,21 +28,9 @@ class LoginForm extends React.Component {
             name: this.state.name,
             email: this.state.email
         }
-        fetch(USERS_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                 Accept: "application/json"
-        },
-            body: JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then((user_data) => {
-            this.props.loginUser(user_data, this.props.history)
-            localStorage.loggedIn = user_data.id
-            this.props.history.push('/')
-            this.props.fetchPlants()
-        })
+        this.props.loginUser(user, this.props.history)
+        this.props.history.push('/')
+        this.props.fetchPlants()
     }  
 
     render(){

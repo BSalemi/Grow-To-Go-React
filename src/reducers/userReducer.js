@@ -15,12 +15,12 @@ export function userReducer(state = initialState, action) {
         case LOGIN_USER: 
             return {
                 ...state, 
-                user: action.user 
+                user: action.payload 
             };
         case ADD_CART_PLANT: 
             return {
                 ...state,
-                user: action.user
+                user: action.payload
             }
         case LOGOUT_USER:
             return initialState
@@ -28,7 +28,7 @@ export function userReducer(state = initialState, action) {
         case REMOVE_CART_PLANT:
             return{
                 ...state,
-                user: action.user
+                user: action.payload
             }
         case CHECKOUT:
             return {

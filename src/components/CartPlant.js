@@ -8,43 +8,19 @@ class CartPlant extends Component {
 
     handleRemoveCart = (event) => {
         let cartPlant = event.target.dataset.cartPlantId
-        fetch(CART_PLANTS_URL + "/" + cartPlant, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify({
-                id: cartPlant,
-            }),
-        })
-        .then(res => res.json())
-        .then((user_data) => {
-            this.props.removeCartPlant(user_data)
-        })
+        this.props.removeCartPlant(cartPlant)
     }
 
     addToCart = event => {
         event.preventDefault()
         if(this.props.user.carts){
-        let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
-        const cart_plant = {
-            cart_id: cartId,
-            plant_id: event.target.dataset.plantId
+            let cartId = this.props.user.carts[this.props.user.carts.length - 1].id
+            const cart_plant = {
+                cart_id: cartId,
+                plant_id: event.target.dataset.plantId
+            }
+            this.props.addCartPlant(cart_plant)
         }
-        fetch(CART_PLANTS_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify(cart_plant)
-        })
-        .then(res => res.json())
-        .then((user_data) => {
-            this.props.addCartPlant(user_data)
-        })
-    }
     }
     
     render() {

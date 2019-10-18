@@ -15,21 +15,10 @@ class PlantCard extends Component {
             cart_id: cartId,
             plant_id: event.target.dataset.plantId
         }
-        fetch(CART_PLANTS_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify(cart_plant)
-        })
-        .then(res => res.json())
-        .then((user_data) => {
-            this.props.addCartPlant(user_data)
-        })
+        this.props.addCartPlant(cart_plant)
     }
-    }
-
+}
+        
     renderPlantCard() {
             return (
                 <>
