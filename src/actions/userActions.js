@@ -1,5 +1,5 @@
 import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT, CHECKOUT } from './types'
-import { CART_PLANTS_URL, USERS_URL } from '../constants'
+import { CART_PLANTS_URL, USERS_URL, CHECKOUT_URL } from '../constants'
 
 
 export const loginUser = (user, history) => dispatch => {
@@ -22,13 +22,6 @@ export const loginUser = (user, history) => dispatch => {
     })
 }
 
-// export function loginUser(user, history) {
-//     history.push('/')  
-//     return {
-//         type: LOGIN_USER,
-//         user
-//     }
-// }
 
 export function logoutUser(user, history){
     history.push('/login')
@@ -76,10 +69,22 @@ export const removeCartPlant = (cartPlantId) => dispatch => {
     })
 }
 
-export function checkout(user){
-    return {
-        type: CHECKOUT,
-        user
-    }
-}
+export const checkout = (user, currentCart) => dispatch => {
+    fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            id: currentCart.id
+        })
+    })
+    .then(res => res.json())
+    .then((user) => {
+        dispatch({
+            type: CHECKOUT,
+            user
+        })
+    })}
 

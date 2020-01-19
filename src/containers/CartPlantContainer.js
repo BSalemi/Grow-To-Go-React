@@ -22,21 +22,10 @@ class CartPlantContainer extends Component {
         let currentCart = this.props.user.carts[this.props.user.carts.length - 1]
         if(currentCart.total > 0){
         alert("Thank you for shopping at Grow To Go.\n\nCome back soon!")
-        fetch(CHECKOUT_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify({
-                id: currentCart.id
-            })
-        })
-        .then(res => res.json())
-        .then(user_data => {
-            this.props.checkout(user_data)
-        })
-    }} 
+        this.props.checkout(this.props.user, currentCart)
+        }
+    }
+
     
     renderCart(){
         let cartContainer = document.getElementById("cart-box")
