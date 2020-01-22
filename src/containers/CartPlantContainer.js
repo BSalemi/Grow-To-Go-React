@@ -59,11 +59,11 @@ class CartPlantContainer extends Component {
     
     render() {   
         return (
-            <div className="cart-container">
+            <div className="cart-container"onMouseLeave={this.handleOnMouse}>
                <button id='cart-btn' onMouseOver={this.handleOnMouse}><img alt="cart" src={`${cartIcon}`}/></button>
               
               <div id="cart-box" >
-                <div id="users-cart" onMouseLeave={this.handleOnMouse}>
+                <div id="users-cart">
                     {this.props.user.carts && this.renderCart()}
                     {this.props.user.carts && this.generateCartPlants()}
                 </div>
