@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { CART_PLANTS_URL } from '../constants.js'
-import {addCartPlant } from '../actions/userActions'
-import {findPlant } from '../actions/plantActions'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { CART_PLANTS_URL } from '../constants.js';
+import { addCartPlant } from '../actions/userActions';
+import { findPlant } from '../actions/plantActions';
+import ReviewForm from './ReviewForm';
 
 
 class PlantShow extends Component {
@@ -30,7 +31,7 @@ class PlantShow extends Component {
         let plant = this.props.plants.foundPlant
         if(plant){
             return(
-                <>
+                <div className="plant-show-container">
                 <div className="plant-show-container-left">
                     <img className="plant-show-pic" alt="house-plant" src={plant.image} />
                 </div>
@@ -44,7 +45,7 @@ class PlantShow extends Component {
                         <p><strong>Pet Friendly:</strong> {plant.pet_friendly ? "Yes. This plant is safe for pets" : "No. This plant is not safe for pets"}</p>
                     <button data-plant-id={plant.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
                 </div> 
-                </>
+                </div>
             )      
         } else {
             return(
@@ -60,9 +61,10 @@ class PlantShow extends Component {
     
     render(){
         return (
-            <>
+            <div className="show-page">
             {this.renderPlant()}
-            </>
+            <ReviewForm/>
+            </div>
         )
     }
 }

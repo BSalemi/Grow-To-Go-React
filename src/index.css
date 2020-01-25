@@ -35,15 +35,18 @@ a:link {
 }
 
 .plant-show-container-left{
- position: absolute;
+ height: 393px;
  left: 50px;
+ flex-grow:1;
 }
 
 .plant-show-container-right{
   text-align: left;
-  position:absolute;
   right: 550px;
-  top: 250px
+  top: 250px;
+  flex-grow:1
+  
+ 
 }
 
 .plant-show-pic{
@@ -144,4 +147,24 @@ a, a:active, a:visited {
 
 #add-cart-plant{
   padding: 3px
+}
+
+.show-page{
+  display: flex;
+}
+
+.review-form{
+  flex-grow: 1;
+  
+}
+
+
+/* .plant-show-container-right:after {
+  content: '';
+  width: 100%; 
+  display: inline-block;
+} */ 
+.plant-show-container {
+  display: flex;
+  flex-grow:2
 }
