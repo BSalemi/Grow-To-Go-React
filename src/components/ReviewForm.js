@@ -12,10 +12,19 @@ export default class ReviewForm extends React.Component {
         })
     }
 
+    handleOnSubmit = (event)=> {
+        event.preventDefault()
+        const review = {
+            title: this.state.title,
+            body: this.state.body
+        }
+    }
+
     render() {
         return(
             <div className="review-form">
-                <form>
+                <h5>Add Review:</h5>
+                <form onSubmit={event => this.handleOnSubmit(event)}>
                     <input type="text" name="title" placeholder="Review Title" value={this.state.title} onChange={event => this.handleOnChange(event)}/>
                     <input type="textarea" name="body" placeholder="Review Body" value={this.state.body} onChange={event => this.handleOnChange(event)}/>
                     <input type="submit"/>
