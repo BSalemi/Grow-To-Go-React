@@ -14,5 +14,7 @@ export const REMOVE_CART_PLANT = "REMOVE_CART_PLANT";
 
 export const CHECKOUT = "CHECKOUT";
 
+export const ADD_REVIEW = "ADD_REVIEW";
+
 
 

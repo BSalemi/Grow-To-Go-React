@@ -20,7 +20,9 @@ export default class ReviewForm extends React.Component {
         event.preventDefault()
         const review = {
             title: this.state.title,
-            body: this.state.body
+            body: this.state.body,
+            user_id: this.props.user_id,
+            plant_id: this.props.plant_id
         }
         fetch(REVIEWS_URL, {
             method: "POST",
@@ -30,7 +32,12 @@ export default class ReviewForm extends React.Component {
         },
         body: JSON.stringify(review)
         })
+        .then(res => res.json())
+        .then(review_data => {
+            console.log(review_data, "review_data")
+        })
     }
+
 
     render() {
         console.log(this.props, "props review form")
