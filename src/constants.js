@@ -3,6 +3,7 @@ export const PLANTS_URL = `${BASE_URL}/plants`
 export const USERS_URL = `${BASE_URL}/users`
 export const CART_PLANTS_URL = `${BASE_URL}/cart_plants`
 export const CHECKOUT_URL = `${BASE_URL}/checkout`
+export const REVIEWS_URL = `${BASE_URL}/reviews`
 
 export const addIcon = "https://cdn2.iconfinder.com/data/icons/bwpx/icons/symbol_addition.gif"
 export const removeIcon = "http://icons.iconarchive.com/icons/icons8/windows-8/16/Editing-Delete-icon.png"

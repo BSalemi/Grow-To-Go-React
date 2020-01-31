@@ -1,6 +1,10 @@
 import React from 'react'; 
+import {REVIEWS_URL} from '../constants.js'
 
 export default class ReviewForm extends React.Component {
+
+    
+
     state = {
         title: "",
         body: ""
@@ -18,9 +22,18 @@ export default class ReviewForm extends React.Component {
             title: this.state.title,
             body: this.state.body
         }
+        fetch(REVIEWS_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                 Accept: "application/json"
+        },
+        body: JSON.stringify(review)
+        })
     }
 
     render() {
+        console.log(this.props, "props review form")
         return(
             <div className="review-form">
                 <h5>Add Review:</h5>

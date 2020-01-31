@@ -12,8 +12,12 @@ class PlantShow extends Component {
 
     componentDidMount(){
         this.props.findPlant(this.props.match.params.id)
+        console.log(this.props.match.params.id, "thisPropsFindPlant")
     }
 
+    componentDidUpdate(){
+        console.log(JSON.parse(JSON.stringify(this.props.plants)));
+    }
     
     addToCart = event => {
         event.preventDefault()
@@ -29,6 +33,7 @@ class PlantShow extends Component {
   
     renderPlant =() => {
         let plant = this.props.plants.foundPlant
+        console.log(this.props.plants, "props in show plant")
         if(plant){
             return(
                 <div className="plant-show-container">
@@ -63,7 +68,8 @@ class PlantShow extends Component {
         return (
             <div className="show-page">
             {this.renderPlant()}
-            <ReviewForm/>
+            {this.props.plants.foundPlant && <ReviewForm user_id={this.props.user.user.id} plant={this.props.plants.foundPlant.id}/>}
+            
             </div>
         )
     }

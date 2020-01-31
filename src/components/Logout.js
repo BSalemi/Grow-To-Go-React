@@ -28,7 +28,7 @@ class Logout extends Component {
     render() {
         return (
             <div>
-                <div class="logout-btn">
+                <div className="logout-btn">
                     <button id="logout" onClick={this.handleOnClick}><img alt="logout button" src={`${logoutIcon}`}/></button>
                 </div>
             </div>
