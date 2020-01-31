@@ -1,7 +1,9 @@
 import React from 'react'; 
-import {REVIEWS_URL} from '../constants.js'
+import { connect } from 'react-redux';
+import { REVIEWS_URL } from '../constants.js'
+import { addReview } from '../actions/userActions'
 
-export default class ReviewForm extends React.Component {
+class ReviewForm extends React.Component {
 
     
 
@@ -24,19 +26,21 @@ export default class ReviewForm extends React.Component {
             user_id: this.props.user_id,
             plant_id: this.props.plant_id
         }
-        fetch(REVIEWS_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                 Accept: "application/json"
-        },
-        body: JSON.stringify(review)
-        })
-        .then(res => res.json())
-        .then(review_data => {
-            console.log(review_data, "review_data")
-        })
+        this.props.addReview(review)
     }
+    //     fetch(REVIEWS_URL, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //              Accept: "application/json"
+    //     },
+    //     body: JSON.stringify(review)
+    //     })
+    //     .then(res => res.json())
+    //     .then(review_data => {
+    //         console.log(review_data, "review_data")
+    //     })
+    // }
 
 
     render() {
@@ -53,3 +57,9 @@ export default class ReviewForm extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    user: state.user.user
+})
+
+export default connect(mapStateToProps, {addReview})(ReviewForm)
