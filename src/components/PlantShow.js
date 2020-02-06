@@ -69,7 +69,7 @@ class PlantShow extends Component {
             <div className="show-page">
             {this.renderPlant()}
             {this.props.plants.foundPlant && <ReviewForm user_id={this.props.user.user.id} plant_id={this.props.plants.foundPlant.id}/>}
-            
+            {/* <Reviews/> */}
             </div>
         )
     }
