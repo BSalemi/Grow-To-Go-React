@@ -28,20 +28,6 @@ class ReviewForm extends React.Component {
         }
         this.props.addReview(review)
     }
-    //     fetch(REVIEWS_URL, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //              Accept: "application/json"
-    //     },
-    //     body: JSON.stringify(review)
-    //     })
-    //     .then(res => res.json())
-    //     .then(review_data => {
-    //         console.log(review_data, "review_data")
-    //     })
-    // }
-
 
     render() {
         console.log(this.props, "props review form")
@@ -59,7 +45,8 @@ class ReviewForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    user: state.user.user
+    user: state.user.user,
+    plants: state.plants
 })
 
 export default connect(mapStateToProps, {addReview})(ReviewForm)

@@ -1,17 +1,30 @@
 import React from 'react';
-import Review from './Review.js'
+import Review from './Review.js';
+import {connect} from 'react-redux';
 
-export default class Reviews extends React.Component {
-    // constructor(){
-    //     console.log(props, "reviews component props")}
+class Reviews extends React.Component {
+    constructor(props){
+        super(props)
+    }
     
     generateReviews = () => {
+        console.log(this.props.reviews, "props")
         const reviews = this.props.reviews.map(review => {
             return <Review title={review.title} body={review.body}/>
         })
         return reviews
     }
     render(){
-        return
+        return(
+            <ul>
+                {this.generateReviews()}
+            </ul>
+        )
     }
 }
+const mapStateToProps = (state) => ({
+    user: state.user,
+    plants: state.plants
+})
+    
+export default connect(mapStateToProps)(Reviews)

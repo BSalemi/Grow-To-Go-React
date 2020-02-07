@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { CART_PLANTS_URL } from '../constants.js';
 import { addCartPlant } from '../actions/userActions';
 import { findPlant } from '../actions/plantActions';
 import ReviewForm from './ReviewForm';
+import Reviews from "./Reviews";
 
 
 class PlantShow extends Component {
     
-
+   
     componentDidMount(){
         this.props.findPlant(this.props.match.params.id)
-        console.log(this.props.match.params.id, "thisPropsFindPlant")
     }
 
-    componentDidUpdate(){
-        console.log(JSON.parse(JSON.stringify(this.props.plants)));
-    }
-    
+   
     addToCart = event => {
         event.preventDefault()
         let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
@@ -67,9 +63,9 @@ class PlantShow extends Component {
     render(){
         return (
             <div className="show-page">
-            {this.renderPlant()}
-            {this.props.plants.foundPlant && <ReviewForm user_id={this.props.user.user.id} plant_id={this.props.plants.foundPlant.id}/>}
-            {/* <Reviews/> */}
+                {this.renderPlant()}
+                {this.props.plants.foundPlant && <ReviewForm user_id={this.props.user.user.id} plant_id={this.props.plants.foundPlant.id}/>}
+                {this.props.plants.foundPlant && <Reviews reviews={this.props.plants.foundPlant.reviews}/>}
             </div>
         )
     }
