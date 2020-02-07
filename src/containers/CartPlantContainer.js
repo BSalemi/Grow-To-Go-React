@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import CartPlant from '../components/CartPlant'
-import {cartIcon, CHECKOUT_URL} from '../constants.js'
+import {cartIcon} from '../constants.js'
 import {checkout} from '../actions/userActions'
 
 class CartPlantContainer extends Component {

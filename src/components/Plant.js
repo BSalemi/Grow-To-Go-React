@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { CART_PLANTS_URL } from '../constants.js'
 import { addCartPlant } from '../actions/userActions'
 import { Link } from 'react-router-dom'
 

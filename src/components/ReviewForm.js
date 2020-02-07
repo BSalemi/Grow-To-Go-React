@@ -1,6 +1,5 @@
 import React from 'react'; 
 import { connect } from 'react-redux';
-import { REVIEWS_URL } from '../constants.js'
 import { addReview } from '../actions/userActions'
 
 class ReviewForm extends React.Component {
@@ -30,7 +29,7 @@ class ReviewForm extends React.Component {
     }
 
     render() {
-        console.log(this.props, "props review form")
+
         return(
             <div className="review-form">
                 <h5>Add Review:</h5>

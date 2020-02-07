@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {addIcon, removeIcon, CART_PLANTS_URL} from '../constants.js'
+import {addIcon, removeIcon} from '../constants.js'
 import { removeCartPlant, addCartPlant } from '../actions/userActions'
 import { connect } from 'react-redux'
 

@@ -2,10 +2,7 @@ import React from 'react'
 import { loginUser } from '../actions/userActions'
 import {fetchPlants} from '../actions/plantActions'
 import { connect } from 'react-redux'
-import {USERS_URL} from '../constants.js' 
 import { withRouter } from 'react-router-dom'
-
-// let loggedIn = null
 
 
 class LoginForm extends React.Component {

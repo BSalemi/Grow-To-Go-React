@@ -29,7 +29,6 @@ class PlantShow extends Component {
   
     renderPlant =() => {
         let plant = this.props.plants.foundPlant
-        console.log(this.props.plants, "props in show plant")
         if(plant){
             return(
                 <div className="plant-show-container">
