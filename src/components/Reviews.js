@@ -3,10 +3,15 @@ import Review from './Review.js';
 import {connect} from 'react-redux';
 
 class Reviews extends React.Component {
+
+    handleRemoveReview = event => {
+        
+    }
    
     generateReviews = () => {
         const reviews = this.props.reviews.map(review => {
             return <Review key={review.id} title={review.title} body={review.body}/>
+            
         })
         return reviews
     }
