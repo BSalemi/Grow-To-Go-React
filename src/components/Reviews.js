@@ -9,8 +9,9 @@ class Reviews extends React.Component {
     }
    
     generateReviews = () => {
+        console.log(this.props.reviews, "props in reviews component")
         const reviews = this.props.reviews.map(review => {
-            return <Review key={review.id} title={review.title} body={review.body}/>
+            return <Review key={review.id} title={review.title} body={review.body} user_id={review.user_id}/>
             
         })
         return reviews
