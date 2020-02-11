@@ -3,10 +3,11 @@ import {deleteReview, REVIEWS_URL} from '../constants.js';
 import {connect} from 'react-redux';
 
 class Review extends React.Component {
-    
+
     handleRemoveReview = event => {
-        event.preventDefault();
         let reviewId = event.target.dataset.reviewId
+        let plantId = this.props.plant_id
+        
         fetch(REVIEWS_URL + "/" + reviewId, {
             method: "DELETE",
             headers: {
@@ -15,21 +16,23 @@ class Review extends React.Component {
             },
             body: JSON.stringify({
                 id: reviewId,
+                plant_id: plantId
             }),
         })
         .then(res => res.json())
-        .then()
-    }
+        .then(json =>  {
+            let plant_data = json
+            return plant_data 
+    })}
     
     render(){
         let user_id = this.props.user.user.id 
-        console.log(user_id, "user id")
         console.log(this.props, "props")
         return(
                 <div className="review">
                     <h4>{this.props.title}</h4>
                     <p>{this.props.body}</p>
-                   {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReview}`} data-review-id={this.props.id} onClick={this.handleRemoveReview}/> : ""}
+                   {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReview}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}
                 </div>
             
         )
