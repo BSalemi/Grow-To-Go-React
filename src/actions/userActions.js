@@ -1,4 +1,4 @@
-import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT, CHECKOUT, ADD_REVIEW} from './types'
+import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT, CHECKOUT, ADD_REVIEW, DELETE_REVIEW} from './types'
 import { CART_PLANTS_URL, USERS_URL, CHECKOUT_URL, REVIEWS_URL } from '../constants'
 
 
@@ -106,7 +106,23 @@ export const addReview = (review) => dispatch => {
     })}
 
 export const deleteReview = (reviewId) => dispatch => {
+    fetch(REVIEWS_URL + "/" + reviewId, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            id: reviewId,
+        }),
+    })
+    .then(res => res.json())
+    .then((plant_data) =>  {
+        dispatch({
+            type: DELETE_REVIEW,
+            plant_data
+        })
+})}
 
-}
 
 
