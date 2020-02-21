@@ -1,29 +1,16 @@
 import React from 'react';
-import {deleteReview, REVIEWS_URL} from '../constants.js';
+import {deleteReviewIcon, REVIEWS_URL} from '../constants.js';
+import { deleteReview } from '../actions/userActions';
 import {connect} from 'react-redux';
 
 class Review extends React.Component {
 
     handleRemoveReview = event => {
+        event.preventDefault();
         let reviewId = event.target.dataset.reviewId
         let plantId = this.props.plant_id
-        
-        fetch(REVIEWS_URL + "/" + reviewId, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify({
-                id: reviewId,
-                plant_id: plantId
-            }),
-        })
-        .then(res => res.json())
-        .then(json =>  {
-            let plant_data = json
-            return plant_data 
-    })}
+        this.props.deleteReview(reviewId, plantId);
+    }
     
     render(){
         let user_id = this.props.user.user.id 
@@ -32,7 +19,7 @@ class Review extends React.Component {
                 <div className="review">
                     <h4>{this.props.title}</h4>
                     <p>{this.props.body}</p>
-                   {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReview}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}
+                   {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReviewIcon}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}
                 </div>
             
         )
@@ -44,4 +31,4 @@ const mapStateToProps = (state) => ({
     plants: state.plants
 })
     
-export default connect(mapStateToProps)(Review)
+export default connect(mapStateToProps, {deleteReview})(Review)

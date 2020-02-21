@@ -105,7 +105,7 @@ export const addReview = (review) => dispatch => {
         })
     })}
 
-export const deleteReview = (reviewId) => dispatch => {
+export const deleteReview = (reviewId, plantId) => dispatch => {
     fetch(REVIEWS_URL + "/" + reviewId, {
         method: "DELETE",
         headers: {
@@ -114,6 +114,7 @@ export const deleteReview = (reviewId) => dispatch => {
         },
         body: JSON.stringify({
             id: reviewId,
+            plant_id: plantId
         }),
     })
     .then(res => res.json())
