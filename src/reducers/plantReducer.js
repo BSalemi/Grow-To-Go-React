@@ -1,7 +1,6 @@
-import { FETCH_PLANTS } from '../actions/types'
-import {FIND_PLANT } from '../actions/types'
+import { FETCH_PLANTS, FIND_PLANT, ADD_REVIEW, DELETE_REVIEW } from '../actions/types'
 
-let initialState = {filter: null, fetchedPlants: [], foundPlant: null}
+let initialState = {filter: null, fetchedPlants: [], foundPlant: null, reviews: []}
 
 export function plantReducer(state = initialState, action){
     switch(action.type){
@@ -14,6 +13,16 @@ export function plantReducer(state = initialState, action){
             return{
                 ...state,
                 foundPlant: action.payload
+            }
+        case ADD_REVIEW:
+            return {
+                ...state,
+                review: action.review
+            }
+        case DELETE_REVIEW:
+            return {
+                ...state,
+                plant: action.plant
             }
         default: 
             return state;

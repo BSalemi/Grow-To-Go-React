@@ -17,11 +17,10 @@ class Review extends React.Component {
         console.log(this.props, "props")
         return(
                 <div className="review">
+                    {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReviewIcon}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}
                     <h4>{this.props.title}</h4>
-                    <p>{this.props.body}</p>
-                   {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReviewIcon}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}
-                </div>
-            
+                    <p>{this.props.body}</p>  
+                </div>   
         )
     }
 }

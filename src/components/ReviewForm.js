@@ -18,6 +18,7 @@ class ReviewForm extends React.Component {
     }
 
     handleOnSubmit = (event)=> {
+        event.preventDefault();
         const review = {
             title: this.state.title,
             body: this.state.body,
