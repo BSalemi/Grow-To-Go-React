@@ -45,8 +45,6 @@ a:link {
   right: 550px;
   top: 250px;
   flex-grow:1
-  
- 
 }
 
 .plant-show-pic{
@@ -156,6 +154,11 @@ a, a:active, a:visited {
 .review-form{
   flex-grow: 1;
   
+}
+
+#remove-review{
+  border: 1px solid black;
+  padding: 0px 3px 0px 3px
 }
 
 

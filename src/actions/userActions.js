@@ -1,5 +1,5 @@
-import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT, CHECKOUT, ADD_REVIEW, DELETE_REVIEW} from './types'
-import { CART_PLANTS_URL, USERS_URL, CHECKOUT_URL, REVIEWS_URL } from '../constants'
+import { LOGIN_USER, ADD_CART_PLANT, LOGOUT_USER, REMOVE_CART_PLANT, CHECKOUT} from './types'
+import { CART_PLANTS_URL, USERS_URL, CHECKOUT_URL } from '../constants'
 
 
 export const loginUser = (user, history) => dispatch => {
@@ -88,42 +88,6 @@ export const checkout = (user, currentCart) => dispatch => {
         })
     })}
 
-export const addReview = (review) => dispatch => {
-    fetch(REVIEWS_URL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-             Accept: "application/json"
-    },
-    body: JSON.stringify(review)
-    })
-    .then(res => res.json())
-    .then((review) => {
-        dispatch({
-            type: ADD_REVIEW,
-            review
-        })
-    })}
-
-export const deleteReview = (reviewId, plantId) => dispatch => {
-    fetch(REVIEWS_URL + "/" + reviewId, {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: JSON.stringify({
-            id: reviewId,
-            plant_id: plantId
-        }),
-    })
-    .then(res => res.json())
-    .then((plant_data) =>  {
-        dispatch({
-            type: DELETE_REVIEW,
-            plant_data
-        })
-})}
 
 
 

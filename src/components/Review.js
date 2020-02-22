@@ -1,6 +1,6 @@
 import React from 'react';
 import {deleteReviewIcon, REVIEWS_URL} from '../constants.js';
-import { deleteReview } from '../actions/userActions';
+import { deleteReview } from '../actions/plantActions';
 import {connect} from 'react-redux';
 
 class Review extends React.Component {
@@ -13,8 +13,8 @@ class Review extends React.Component {
     }
     
     render(){
+    
         let user_id = this.props.user.user.id 
-        console.log(this.props, "props")
         return(
                 <div className="review">
                     {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReviewIcon}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}

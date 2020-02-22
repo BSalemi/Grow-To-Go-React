@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { connect } from 'react-redux';
-import { addReview } from '../actions/userActions'
+import { addReview } from '../actions/plantActions'
 
 class ReviewForm extends React.Component {
 
@@ -18,6 +18,7 @@ class ReviewForm extends React.Component {
     }
 
     handleOnSubmit = (event)=> {
+        
         event.preventDefault();
         const review = {
             title: this.state.title,

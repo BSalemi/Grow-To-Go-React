@@ -1,5 +1,5 @@
-import { FETCH_PLANTS, FIND_PLANT } from './types'
-import { PLANTS_URL } from '../constants.js'
+import { FETCH_PLANTS, FIND_PLANT, ADD_REVIEW, DELETE_REVIEW } from './types'
+import { PLANTS_URL, REVIEWS_URL } from '../constants.js'
 
 export const fetchPlants = () => dispatch => {
     fetch(PLANTS_URL)
@@ -22,6 +22,49 @@ export const findPlant = (id) => dispatch => {
         })  
     })
 }
+export const addReview = (review) => dispatch => {
+    fetch(REVIEWS_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+             Accept: "application/json"
+    },
+    body: JSON.stringify(review)
+    })
+    .then(res => res.json())
+    .then((review) => {
+        console.log(JSON.stringify(review, "review in dispatch"))
+        dispatch({
+            
+            type: ADD_REVIEW,
+            payload: review
+        })
+    })}
+
+export const deleteReview = (reviewId, plantId) => dispatch => {
+    let review = {
+        id: reviewId,
+        plant_id: plantId
+    }
+    fetch(REVIEWS_URL + "/" + reviewId, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            review
+        }),
+    })
+    .then(res => res.json())
+    .then((id) =>  {
+        dispatch({
+            type: DELETE_REVIEW,
+            id
+            
+        })
+})}
+
 
 
 

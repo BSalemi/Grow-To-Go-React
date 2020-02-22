@@ -60,6 +60,7 @@ class PlantShow extends Component {
      
     
     render(){
+        console.log(this.props.plants.foundPlant, "found plant")
         return (
             <div className="show-page">
                 {this.renderPlant()}
@@ -67,6 +68,7 @@ class PlantShow extends Component {
                 {this.props.plants.foundPlant && <Reviews reviews={this.props.plants.foundPlant.reviews}/>}
             </div>
         )
+        
     }
 }
 const mapStateToProps = (state) => ({

@@ -15,15 +15,22 @@ export function plantReducer(state = initialState, action){
                 foundPlant: action.payload
             }
         case ADD_REVIEW:
+            console.log(state, "state in reducer")
             return {
                 ...state,
-                review: action.review
+                foundPlant: {
+                   ...state.foundPlant,
+                   reviews: [...state.foundPlant.reviews, action.payload]
+                }
             }
         case DELETE_REVIEW:
             return {
                 ...state,
-                plant: action.plant
+                foundPlant: {
+                    ...state.foundPlant,
+                reviews: [...state.foundPlant.reviews.filter(review => review.id !== action.id)]
             }
+        }
         default: 
             return state;
     }
