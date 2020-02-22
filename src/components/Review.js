@@ -8,8 +8,7 @@ class Review extends React.Component {
     handleRemoveReview = event => {
         event.preventDefault();
         let reviewId = event.target.dataset.reviewId
-        let plantId = this.props.plant_id
-        this.props.deleteReview(reviewId, plantId);
+        this.props.deleteReview(reviewId);
     }
     
     render(){
