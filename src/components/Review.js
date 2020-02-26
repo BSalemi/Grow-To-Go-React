@@ -10,16 +10,16 @@ class Review extends React.Component {
         let reviewId = event.target.dataset.reviewId
         this.props.deleteReview(reviewId);
     }
-    
     render(){
-    
-        let user_id = this.props.user.user.id 
+        let user_id = this.props.user.user.id
         return(
                 <div className="review">
                     {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReviewIcon}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}
-                    <h4>{this.props.title}</h4>
-                    <p>{this.props.body}</p>  
-                </div>   
+                    <div id="review">
+                        <h4 id="review-heading">{this.props.title}</h4>
+                        <p id="review-body"> {this.props.body}</p>
+                    </div>
+                </div>
         )
     }
 }

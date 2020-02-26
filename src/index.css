@@ -150,15 +150,39 @@ a, a:active, a:visited {
 .show-page{
   display: flex;
 }
-
-.review-form{
-  flex-grow: 1;
-  
+.review-form {
+  padding: 3px;
+  width: 450px;
 }
 
+.review {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-start;
+  align-items: left;
+} */}
+
+#review-heading{
+  text-align: left;
+}
+
+#review-body{
+  text-align: left;
+}
+
+.review-container{
+  height: min-content;
+  width: 420px;
+  border: black 2px solid
+}
+.show-reviews{
+  display: flex;
+  flex-direction: column;
+}
 #remove-review{
   border: 1px solid black;
-  padding: 0px 3px 0px 3px
+  padding: 0px 3px 0px 3px;
+  height: 20px;
 }
 
 
