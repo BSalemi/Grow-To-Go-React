@@ -160,7 +160,12 @@ a, a:active, a:visited {
   flex-direction: row;
   /* justify-content: flex-start;
   align-items: left;
-} */}
+} */
+}
+
+#review{
+  align-items: left;
+}
 
 #review-heading{
   text-align: left;
@@ -171,9 +176,10 @@ a, a:active, a:visited {
 }
 
 .review-container{
-  height: min-content;
+  height: 300px;
   width: 420px;
-  border: black 2px solid
+  border: black 2px solid;
+  overflow-y: auto;
 }
 .show-reviews{
   display: flex;
@@ -182,7 +188,10 @@ a, a:active, a:visited {
 #remove-review{
   border: 1px solid black;
   padding: 0px 3px 0px 3px;
-  height: 20px;
+  margin-right: 3px;
+  margin-top: 3px;
+  height: 15px;
+  width: 15px;
 }
 
 
