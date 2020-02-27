@@ -26,7 +26,11 @@ class ReviewForm extends React.Component {
             user_id: this.props.user_id,
             plant_id: this.props.plant_id
         }
-        this.props.addReview(review)
+        this.props.addReview(review);
+        this.setState({
+            title: "",
+            body: ""
+        })
     }
 
     render() {

@@ -16,7 +16,7 @@ class Review extends React.Component {
                 <div className="review">
                     {user_id === this.props.user_id ? <img id="remove-review" alt="remove-review" src={`${deleteReviewIcon}`} data-review-id={this.props.id} onClick={event => this.handleRemoveReview(event)}/> : ""}
                     <div id="review">
-                        <h4 id="review-heading">{this.props.title}</h4>
+                        <h5 id="review-heading">{this.props.title}</h5>
                         <p id="review-body"> {this.props.body}</p>
                     </div>
                 </div>
