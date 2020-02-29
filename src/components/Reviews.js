@@ -13,9 +13,9 @@ class Reviews extends React.Component {
     }
     render(){
         return(
-            <ul>
+            <>
                 {this.generateReviews()}
-            </ul>
+           </>
         )
     }
 }

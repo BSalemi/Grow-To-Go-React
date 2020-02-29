@@ -60,13 +60,11 @@ class PlantShow extends Component {
      
     
     render(){
-        console.log(this.props.plants.foundPlant, "found plant")
         return (
             <div className="show-page">
                 {this.renderPlant()}
                 <div className="show-reviews">
                     {this.props.plants.foundPlant && <ReviewForm user_id={this.props.user.user.id} plant_id={this.props.plants.foundPlant.id}/>}
-               
                     <div className="review-container">
                         {this.props.plants.foundPlant && <Reviews reviews={this.props.plants.foundPlant.reviews}/>}
                     </div>
