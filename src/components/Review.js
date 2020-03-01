@@ -1,5 +1,5 @@
 import React from 'react';
-import {deleteReviewIcon, REVIEWS_URL} from '../constants.js';
+import {deleteReviewIcon} from '../constants.js';
 import { deleteReview } from '../actions/plantActions';
 import {connect} from 'react-redux';
 
