@@ -40,23 +40,26 @@ class App extends React.Component {
 
  updateSearch = (event) =>{
    this.setState({
+     ...this.state,
      search: event.target.value
    })
  }
 
  setVisibilityFilter = (event) => {
    this.setState({
+     ...this.state,
      visibilityFilter: event.target.value
    })
  }
 
  setPetFriendly = () => {
-   this.setState(prevState => {
-     return {
-       petFriendly: !prevState.petFriendly
-       }
-   })
-  }
+  this.setState(prevState => {
+    return {
+      ...prevState,
+      petFriendly: !prevState.petFriendly
+      }
+  })
+ }
 
   
  componentDidMount(){

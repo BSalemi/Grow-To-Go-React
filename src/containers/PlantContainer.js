@@ -22,42 +22,45 @@ class PlantContainer extends Component {
 
         
     filterVisiblePlants = () => { 
+        const filtered = this.filterPetFriendly()
         switch(this.props.visibilityFilter){
             case "sort_price_asc":
-                return this.filterPetFriendly().sort((a, b) => (a.price > b.price) ? 1 : -1 );   
+                return filtered.sort((a, b) => (a.price > b.price) ? 1 : -1 );   
             case "sort_price_desc":
-                return this.filterPetFriendly().sort((a, b) => (a.price < b.price) ? 1 : -1 );
+                return filtered.sort((a, b) => (a.price < b.price) ? 1 : -1 );
             case "find_mini":
-                return this.filterPetFriendly().filter(plant => plant.size === "Mini");
+                return filtered.filter(plant => plant.size === "Mini");
             case "find_small":
-                return this.filterPetFriendly().filter(plant => plant.size === "Small");
+                return filtered.filter(plant => plant.size === "Small");
             case "find_medium":
-                return this.filterPetFriendly().filter(plant => plant.size === "Medium");
+                return filtered.filter(plant => plant.size === "Medium");
             case "find_large":
-                return this.filterPetFriendly().filter(plant => plant.size === "Large");
+                return filtered.filter(plant => plant.size === "Large");
             case "find_xlarge":
-                return this.filterPetFriendly().filter(plant => plant.size === "X-Large");
+                return filtered.filter(plant => plant.size === "X-Large");
             case "find_beginner":
-                return this.filterPetFriendly().filter(plant => plant.exp_level === "Beginner");
+                return filtered.filter(plant => plant.exp_level === "Beginner");
             case "find_intermediate":
-                return this.filterPetFriendly().filter(plant => plant.exp_level === "Intermediate");
+                return filtered.filter(plant => plant.exp_level === "Intermediate");
             case "find_advanced":
-                return this.filterPetFriendly().filter(plant => plant.exp_level === "Advanced");
+                return filtered.filter(plant => plant.exp_level === "Advanced");
             case "find_low":
-                return this.filterPetFriendly().filter(plant => plant.light_required.includes("Low"));
+                return filtered.filter(plant => plant.light_required.includes("Low"));
             case "find_medium_indirect":
-                return this.filterPetFriendly().filter(plant => plant.light_required.includes("Medium"));
+                return filtered.filter(plant => plant.light_required.includes("Medium"));
             case "find_bright_indirect":
-                return this.filterPetFriendly().filter(plant => plant.light_required.includes("Bright Indirect"));
+                return filtered.filter(plant => plant.light_required.includes("Bright Indirect"));
             case "find_bright_direct":
-                return this.filterPetFriendly().filter(plant => plant.light_required.includes("Bright Direct"));
+                return filtered.filter(plant => plant.light_required.includes("Bright Direct"));
             case "find_full_sun":
-                return this.filterPetFriendly().filter(plant => plant.light_required.includes("Full Sun"));      
+                return filtered.filter(plant => plant.light_required.includes("Full Sun"));  
+            default:
+                return filtered    
         }   
     }
 
     generatePlants = () => {
-        if(this.filterVisiblePlants() && this.props.visibilityFilter && this.props.search === ""){
+        if((this.props.visibilityFilter || this.props.petFriendly) && this.props.search === ""){
             return this.filterVisiblePlants().map(plant => {
             return <div className="plant-card" key={plant.id}>
             <Plant id={plant.id} image={plant.image} size={plant.size} price={plant.price} name={plant.name} species={plant.species} exp_level={plant.exp_level} light_required={plant.light_required} pet_friendly={plant.pet_friendly}/>
