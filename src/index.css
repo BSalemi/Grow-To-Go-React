@@ -85,7 +85,7 @@ code {
 a h3:hover {
  cursor: pointer;
  color: maroon;
- text-decoration: none;
+
 }
 
 a, a:active, a:visited {
