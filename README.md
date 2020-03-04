@@ -39,6 +39,7 @@ From here, the user has a number of different options to find the perfect plant 
       
    * Use the search feature to find plants directly by name. 
    * Click on a plant to be brought to that particular plant's show page which includes more information about that plant.
+   * Leave a review for each particular plant.
    * Add a desired plant to their shopping cart by clicking the associated Add to Cart button.
    * Hover over the Shopping Cart icon to display the contenets of the user's cart.
    * Remove a plant from their cart by clicking on the Trash Bin icon.
