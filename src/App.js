@@ -18,7 +18,12 @@ class App extends React.Component {
   
   state = {
     search: "",
-    visibilityFilter: null,
+    visibilityFilter: {
+      price: null,
+      size: null,
+      expLevel: null,
+      lightRequired: null
+    },
     petFriendly: false,
   }
 
@@ -47,7 +52,7 @@ class App extends React.Component {
 
  setVisibilityFilter = (event) => {
    this.setState({
-     ...this.state,
+     ...this.state.visibilityFilter,
      visibilityFilter: event.target.value
    })
  }
