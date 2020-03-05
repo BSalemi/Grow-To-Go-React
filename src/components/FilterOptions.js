@@ -8,14 +8,14 @@ const FilterOptions = (props) => {
             <div className="sort-menus">
             <div className="sort-menu-children">
                 <label value="select-price"><strong>Sort by Price:</strong></label>
-                <select onChange={props.setVisibilityFilter} id="price-dropdown" name="sort-price">
+                <select onChange={props.setVisibilityFilter} id="price-dropdown" name="price">
                     <option value="sort_price_asc">Low to High</option>
                     <option value="sort_price_desc">High to Low</option>
                 </select>
             </div>
             <div className="sort-menu-children">
                 <label value="select-size"><strong>Sort by Size:</strong></label>
-                <select onChange={props.setVisibilityFilter} id="size-dropdown" name="select-size">
+                <select onChange={props.setVisibilityFilter} id="size-dropdown" name="size">
                     <option  value="find_mini">Mini</option>
                     <option  value="find_small">Small</option>
                     <option  value="find_medium">Medium</option>
@@ -26,7 +26,7 @@ const FilterOptions = (props) => {
 
             <div className="sort-menu-children">
                 <label value="select-exp-level"><strong>Sort by Experience:</strong></label>
-                <select onChange={props.setVisibilityFilter} id="exp-level-dropdown" name="select-exp-level">
+                <select onChange={props.setVisibilityFilter} id="exp-level-dropdown" name="expLevel">
                     <option  value="find_beginner">Beginner</option>
                     <option  value="find_intermediate">Intermediate</option>
                     <option  value="find_advanced">Advanced</option>
@@ -35,7 +35,7 @@ const FilterOptions = (props) => {
 
             <div className="sort-menu-children">
                 <label value="select-light-required"><strong>Sort by Light Requirement:</strong></label>
-                <select onChange={props.setVisibilityFilter} id="light-required-dropdown" name="select-light-required">
+                <select onChange={props.setVisibilityFilter} id="light-required-dropdown" name="lightRequired">
                     <option  value="find_low">Low Light</option>
                     <option  value="find_medium_indirect">Medium Indirect</option>
                     <option  value="find_bright_indirect">Bright Indirect</option>

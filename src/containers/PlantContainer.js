@@ -23,7 +23,11 @@ class PlantContainer extends Component {
         
     filterVisiblePlants = () => { 
         const filtered = this.filterPetFriendly()
-        switch(this.props.visibilityFilter){
+        console.log(this.props.visibilityFilter, "visibilityFilter")
+        for(let filter in this.props.visibilityFilter){
+            
+            console.log(filter, "filter in filterVisiblePlants")
+        switch(filter){
             case "sort_price_asc":
                 return filtered.sort((a, b) => (a.price > b.price) ? 1 : -1 );   
             case "sort_price_desc":
@@ -56,11 +60,12 @@ class PlantContainer extends Component {
                 return filtered.filter(plant => plant.light_required.includes("Full Sun"));  
             default:
                 return filtered    
-        }   
+        }}   
     }
 
     generatePlants = () => {
-        if((this.props.visibilityFilter || this.props.petFriendly) && this.props.search === ""){
+        let values = this.props.visibilityFilter.values 
+        if((values || this.props.petFriendly) && this.props.search === ""){
             return this.filterVisiblePlants().map(plant => {
             return <div className="plant-card" key={plant.id}>
             <Plant id={plant.id} image={plant.image} size={plant.size} price={plant.price} name={plant.name} species={plant.species} exp_level={plant.exp_level} light_required={plant.light_required} pet_friendly={plant.pet_friendly}/>

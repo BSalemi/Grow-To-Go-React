@@ -52,10 +52,14 @@ class App extends React.Component {
 
  setVisibilityFilter = (event) => {
    this.setState({
-     ...this.state.visibilityFilter,
-     visibilityFilter: event.target.value
+     visibilityFilter: {
+       ...this.state.visibilityFilter,
+       [event.target.name]: [event.target.value]
+       
+     }       
    })
  }
+ 
 
  setPetFriendly = () => {
   this.setState(prevState => {
