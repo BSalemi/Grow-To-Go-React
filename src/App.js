@@ -54,7 +54,7 @@ class App extends React.Component {
    this.setState({
      visibilityFilter: {
        ...this.state.visibilityFilter,
-       [event.target.name]: [event.target.value]
+       [event.target.name]: event.target.value
        
      }       
    })
