@@ -27,52 +27,52 @@ class PlantContainer extends Component {
         
         const visFilter = this.props.visibilityFilter
         
-        if(visFilter.price == "sort_price_asc"){
+        if(visFilter.price === "sort_price_asc"){
             filtered = filtered.sort((a, b) => (a.price > b.price) ? 1 : -1 ); 
         }
-        if(visFilter.price == "sort_price_desc"){
+        if(visFilter.price === "sort_price_desc"){
             filtered = filtered.sort((a, b) => (a.price < b.price) ? 1 : -1 );
         }
-        if(visFilter.size == "find_mini"){
+        if(visFilter.size === "find_mini"){
             filtered = filtered.filter(plant => plant.size === "Mini");
         }
-        if(visFilter.size == "find_small"){
+        if(visFilter.size === "find_small"){
             filtered = filtered.filter(plant => plant.size === "Small");
         }
-        if(visFilter.size == "find_medium"){
+        if(visFilter.size === "find_medium"){
             filtered = filtered.filter(plant => plant.size === "Medium");
         }
-        if(visFilter.size == "find_large"){
+        if(visFilter.size === "find_large"){
             filtered = filtered.filter(plant => plant.size === "Large");
         }
-        if(visFilter.size == "find_xlarge"){
+        if(visFilter.size === "find_xlarge"){
             filtered = filtered.filter(plant => plant.size === "X-Large");
         }
-        if(visFilter.expLevel == "find_beginner"){
+        if(visFilter.expLevel === "find_beginner"){
             filtered = filtered.filter(plant => plant.exp_level === "Beginner");
         }
-        if(visFilter.expLevel == "find_intermediate"){
+        if(visFilter.expLevel === "find_intermediate"){
             filtered = filtered.filter(plant => plant.exp_level === "Intermediate");
         }
-        if(visFilter.expLevel == "find_advanced"){
+        if(visFilter.expLevel === "find_advanced"){
             filtered = filtered.filter(plant => plant.exp_level === "Advanced");
         }
-        if(visFilter.lightRequired == "find_low"){
+        if(visFilter.lightRequired === "find_low"){
             filtered = filtered.filter(plant => plant.light_required.includes("Low"));
         }
-        if(visFilter.lightRequired == "find_medium_indirect"){
+        if(visFilter.lightRequired === "find_medium_indirect"){
             filtered = filtered.filter(plant => plant.light_required.includes("Medium"));
         }
-        if(visFilter.lightRequired == "find_low"){
+        if(visFilter.lightRequired === "find_low"){
             filtered = filtered.filter(plant => plant.light_required.includes("Low"));
         }
-        if(visFilter.lightRequired == "find_bright_indirect"){
+        if(visFilter.lightRequired === "find_bright_indirect"){
             filtered = filtered.filter(plant => plant.light_required.includes("Bright Indirect"));
         }
-        if(visFilter.lightRequired == "find_bright_direct"){
+        if(visFilter.lightRequired === "find_bright_direct"){
             filtered = filtered.filter(plant => plant.light_required.includes("Bright Direct"));
         }
-        if(visFilter.lightRequired == "find_full_sun"){
+        if(visFilter.lightRequired === "find_full_sun"){
             filtered = filtered.filter(plant => plant.light_required.includes("Full Sun"));
         }  
         return filtered
