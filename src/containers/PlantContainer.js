@@ -27,28 +27,56 @@ class PlantContainer extends Component {
         
         const visFilter = this.props.visibilityFilter
         
-        if(visFilter.price === "sort_price_asc"){
+        if(visFilter.price == "sort_price_asc"){
             return filtered.sort((a, b) => (a.price > b.price) ? 1 : -1 ); 
         }
-        if(visFilter.price === "sort_price_desc"){
+        if(visFilter.price == "sort_price_desc"){
             return filtered.sort((a, b) => (a.price < b.price) ? 1 : -1 );
         }
-        if(visFilter.size === "find_mini"){
+        if(visFilter.size == "find_mini"){
             return filtered.filter(plant => plant.size === "Mini");
         }
-        if(visFilter.size === "find_small"){
-            return filtered.filter(plant => plant.size === "Small")
+        if(visFilter.size == "find_small"){
+            return filtered.filter(plant => plant.size === "Small");
         }
-        if(visFilter.size === "find_medium"){
-            return filtered.filter(plant => plant.size === "Medium")
+        if(visFilter.size == "find_medium"){
+            return filtered.filter(plant => plant.size === "Medium");
         }
-        if(visFilter.size === "find_large"){
-            return filtered.filter
+        if(visFilter.size == "find_large"){
+            return filtered.filter(plant => plant.size === "Large");
         }
-        if(visFilter.size === "find_xlarge"){
-            return filtered.filter(plant => plant.size === "X-Large")
+        if(visFilter.size == "find_xlarge"){
+            return filtered.filter(plant => plant.size === "X-Large");
         }
+        if(visFilter.expLevel == "find_beginner"){
+            return filtered.filter(plant => plant.exp_level === "Beginner");
+        }
+        if(visFilter.expLevel == "find_intermediate"){
+            return filtered.filter(plant => plant.exp_level === "Intermediate");
+        }
+        if(visFilter.expLevel == "find_advanced"){
+            return filtered.filter(plant => plant.exp_level === "Advanced");
+        }
+        if(visFilter.lightRequired == "find_low"){
+            return filtered.filter(plant => plant.light_required.includes("Low"));
+        }
+        if(visFilter.lightRequired == "find_medium_indirect"){
+            return filtered.filter(plant => plant.light_required.includes("Medium"));
+        }
+        if(visFilter.lightRequired == "find_low"){
+            return filtered.filter(plant => plant.light_required.includes("Low"));
+        }
+        if(visFilter.lightRequired == "find_bright_indirect"){
+            return filtered.filter(plant => plant.light_required.includes("Bright Indirect"));
+        }
+        if(visFilter.lightRequired == "find_bright_direct"){
+            return filtered.filter(plant => plant.light_required.includes("Bright Direct"));
+        }
+        if(visFilter.lightRequired == "find_full_sun"){
+            return filtered.filter(plant => plant.light_required.includes("Full Sun"));
+        }  
         return filtered
+    }
                     // case "find_mini":
                         
                     // case "find_small":
@@ -76,10 +104,6 @@ class PlantContainer extends Component {
                     // case "find_full_sun":
                     //     return filtered.filter(plant => plant.light_required.includes("Full Sun"));  
                     // default:
-                        
-
-        
-    }
 
     generatePlants = () => {
         if(this.filterVisiblePlants() && (this.props.visibilityFilter || this.props.petFriendly) && this.props.search === ""){
