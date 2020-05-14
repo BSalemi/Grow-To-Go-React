@@ -6,7 +6,7 @@ Flatiron School React & Redux Project - Grow To Go, a React / Redux application 
 
 ## Installation
 
-For local usage of the application, please follow the belong instructions.
+For local usage of the application, please follow the below instructions.
 
 After cloning the repo, install the dependencies by executing the below command in your terminal:
 
