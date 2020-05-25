@@ -1,4 +1,4 @@
-const BASE_URL = "https://grow-to-go-backend.herokuapp.com/"
+const BASE_URL = "https://grow-to-go-backend.herokuapp.com"
 export const PLANTS_URL = `${BASE_URL}/plants`
 export const USERS_URL = `${BASE_URL}/users`
 export const CART_PLANTS_URL = `${BASE_URL}/cart_plants`
