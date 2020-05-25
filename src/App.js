@@ -81,7 +81,7 @@ class App extends React.Component {
       <div className="App">
         
           <div>
-            <Link to="/">
+            <Link to="/login">
             <div id="app-header">
               <img src="https://www.dropbox.com/s/ovyh7qkl5p232sc/gtglogo.png?raw=1" alt="plants-letters-font" border="0"/>
               <p className="slogan">
