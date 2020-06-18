@@ -2,7 +2,14 @@
 
 # Grow To Go
 
-Flatiron School React & Redux Project - Grow To Go, a React / Redux application (with a Rails API backend), is a mock ecommerce site that allows users to find the perfect houseplant that fits their lifestyle, needs, and capabilities.  
+Flatiron School React & Redux Project - Grow To Go, a React / Redux application (with a Rails API backend), is a mock ecommerce site that allows users to find the perfect houseplant that fits their lifestyle, needs, and capabilities. 
+
+https://grow-to-go.herokuapp.com/
+
+### Login Credentials
+
+Email: test123@gmail.com
+Username: test123 
 
 ## Installation
 
