@@ -28,7 +28,12 @@ code {
 .plant-pic{
   border: 5px ridge brown;
   height: 393px;
-  width:324px
+  width:324px;
+  transition: all .2s ease-in-out;
+}
+
+.plant-pic:hover{
+  transform: scale(1.03)
 }
 
 .plant-show-container-left{
@@ -48,6 +53,18 @@ code {
   border: 5px ridge brown;
   height: 393px;
   width: 324 px;
+}
+
+.plant-show-container button {
+  background-color: brown;
+  color: white;
+  border: maroon solid 2px;
+  border-radius: 25px;
+  transition: all .2s ease-in-out;
+}
+
+.plant-show-container button:hover{
+  transform: scale(1.1)
 }
 
 
@@ -103,13 +120,6 @@ a, a:active, a:visited {
 .plant-card button:hover {
   transform: scale(1.1);
 }
-
-/* button {
-  background-color: brown;
-  color: white;
-  border: maroon solid 2px;
-  border-radius: 25px;
-} */
 
 
 #cart-btn{
@@ -177,9 +187,6 @@ a, a:active, a:visited {
 .review {
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start;
-  align-items: left;
-} */
 }
 
 #review{
@@ -197,7 +204,6 @@ a, a:active, a:visited {
 .review-container{
   max-height: 300px;
   width: 420px;
-  /* background:rgba(192, 148, 91, 0.75); */
   overflow-y: auto;
   padding: 10px;
 }
@@ -215,11 +221,6 @@ a, a:active, a:visited {
 }
 
 
-/* .plant-show-container-right:after {
-  content: '';
-  width: 100%; 
-  display: inline-block;
-} */ 
 .plant-show-container {
   display: flex;
   flex-grow:2

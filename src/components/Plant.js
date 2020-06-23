@@ -23,7 +23,7 @@ class PlantCard extends Component {
                 <>
                 <div>
                 <br/>
-                <img className="plant-pic" alt="house-plant" src={this.props.image} />
+                <Link style={{textDecoration: "none", color: "brown"}} to={"/plants/" + this.props.id}> <img className="plant-pic" alt="house-plant" src={this.props.image} /></Link>
                 </div>
                 <>
                 <Link style={{textDecoration: "none", color: "brown"}} to={"/plants/" + this.props.id}> <h3>{this.props.name}</h3></Link>
