@@ -37,11 +37,11 @@ class ReviewForm extends React.Component {
 
         return(
             <div className="review-form">
-                <h5>Add Review:</h5>
+                <h5>Reviews</h5>
                 <form onSubmit={event => this.handleOnSubmit(event)}>
                     <input type="text" name="title" placeholder="Review Title" value={this.state.title} onChange={event => this.handleOnChange(event)}/>
                     <input type="textarea" name="body" placeholder="Review Body" value={this.state.body} onChange={event => this.handleOnChange(event)}/>
-                    <input type="submit" value="Add Review"/>
+                    <input id="review-submit" type="submit" value="Leave Review"/>
                 </form>
             </div>
         )
