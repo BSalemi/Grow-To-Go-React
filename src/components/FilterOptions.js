@@ -7,14 +7,14 @@ const FilterOptions = (props) => {
         return (
             <div className="sort-menus">
             <div className="sort-menu-children">
-                <label value="select-price"><strong>Sort by Price:</strong></label>
+                <label value="select-price"><strong style="padding: 3px">Price:</strong></label>
                 <select onChange={props.setVisibilityFilter} id="price-dropdown" name="price">
                     <option value="sort_price_asc">Low to High</option>
                     <option value="sort_price_desc">High to Low</option>
                 </select>
             </div>
             <div className="sort-menu-children">
-                <label value="select-size"><strong>Sort by Size:</strong></label>
+                <label value="select-size"><strong style="padding: 3px">Size:</strong></label>
                 <select onChange={props.setVisibilityFilter} id="size-dropdown" name="size">
                     <option  value="find_mini">Mini</option>
                     <option  value="find_small">Small</option>
@@ -25,7 +25,7 @@ const FilterOptions = (props) => {
             </div>
 
             <div className="sort-menu-children">
-                <label value="select-exp-level"><strong>Sort by Experience:</strong></label>
+                <label value="select-exp-level"><strong style="padding: 3px">Experience:</strong></label>
                 <select onChange={props.setVisibilityFilter} id="exp-level-dropdown" name="expLevel">
                     <option  value="find_beginner">Beginner</option>
                     <option  value="find_intermediate">Intermediate</option>
@@ -34,7 +34,7 @@ const FilterOptions = (props) => {
             </div>
 
             <div className="sort-menu-children">
-                <label value="select-light-required"><strong>Sort by Light Requirement:</strong></label>
+                <label value="select-light-required"><strong style="padding: 3px">Light Requirement:</strong></label>
                 <select onChange={props.setVisibilityFilter} id="light-required-dropdown" name="lightRequired">
                     <option  value="find_low">Low Light</option>
                     <option  value="find_medium_indirect">Medium Indirect</option>
@@ -44,7 +44,7 @@ const FilterOptions = (props) => {
                 </select>
             </div>
             <div className="sort-menu-children">
-                <label value="select-pet-friendly"><strong>Pet Friendly: </strong></label>
+                <label value="select-pet-friendly"><strong style="padding: 3px">Pet Friendly: </strong></label>
                 <input onClick={props.setPetFriendly}  defaultChecked={false} type="checkbox" id="pet-friendly-checkbox" value="pet-friendly"/>
             </div>
         </div>
