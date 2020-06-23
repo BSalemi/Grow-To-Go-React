@@ -8,7 +8,8 @@ class ReviewForm extends React.Component {
 
     state = {
         title: "",
-        body: ""
+        body: "",
+        visibility: false
     }
 
     handleOnChange = (event)=>{
@@ -33,17 +34,26 @@ class ReviewForm extends React.Component {
         })
     }
 
+    toggleVisibility = () => {
+        this.setState({
+            visibility: !this.state.visibility
+        })
+        console.log(this.state.visibility)
+    }
     render() {
 
         return(
-            <div className="review-form">
-                <h5>Reviews</h5>
+            <>
+            <h5>Reviews</h5>
+            <button onClick={this.toggleVisibility} className={this.state.visibility ? "hidden" : "leave-review"}>Leave Review</button>
+            <div className={this.state.visibility ? "review-form" : "hidden"}>
                 <form onSubmit={event => this.handleOnSubmit(event)}>
                     <input type="text" name="title" placeholder="Review Title" value={this.state.title} onChange={event => this.handleOnChange(event)}/>
                     <input type="textarea" name="body" placeholder="Review Body" value={this.state.body} onChange={event => this.handleOnChange(event)}/>
                     <input id="review-submit" type="submit" value="Leave Review"/>
                 </form>
             </div>
+            </>
         )
     }
 }

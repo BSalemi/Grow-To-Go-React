@@ -241,11 +241,22 @@ a, a:active, a:visited {
 }
 #remove-review{
   border: 1px solid black;
+  border-radius:20px;
   padding: 0px 3px 0px 3px;
   margin-right: 3px;
   margin-top: 3px;
   height: 15px;
   width: 15px;
+  transition: all .2s ease-in-out;
+}
+
+#remove-review:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 
