@@ -163,7 +163,17 @@ a, a:active, a:visited {
   display: inline-block
 }
 
+#total-checkout button{
+  border-radius: 25px;
+  border: 2px solid maroon;
+  background-color: brown;
+  color: white;
+  transition: all .2s ease-in-out;
+}
 
+#total-checkout button:hover{
+  transform: scale(1.1)
+}
 
 #checkout{
   padding: 3px;
@@ -181,11 +191,21 @@ a, a:active, a:visited {
   
 }
 #remove-cart-plant{
-  padding: 3px
+  padding: 3px;
+  transition: all .2s ease-in-out;
+}
+
+#remove-cart-plant:hover{
+  transform: scale(1.1)
 }
 
 #add-cart-plant{
-  padding: 3px
+  padding: 3px;
+  transition: all .2s ease-in-out;
+}
+
+#add-cart-plant:hover{
+  transform: scale(1.1)
 }
 
 .show-page{
