@@ -45,12 +45,14 @@ class ReviewForm extends React.Component {
         return(
             <>
             <h5>Reviews</h5>
+            <div>
             <button onClick={this.toggleVisibility} className={this.state.visibility ? "hidden" : "leave-review"}>Leave Review</button>
+            </div>
             <div className={this.state.visibility ? "review-form" : "hidden"}>
                 <form onSubmit={event => this.handleOnSubmit(event)}>
                     <input type="text" name="title" placeholder="Review Title" value={this.state.title} onChange={event => this.handleOnChange(event)}/>
                     <input type="textarea" name="body" placeholder="Review Body" value={this.state.body} onChange={event => this.handleOnChange(event)}/>
-                    <input id="review-submit" type="submit" value="Leave Review"/>
+                    <input id="review-submit" type="submit" value="Add Review"/>
                 </form>
             </div>
             </>
