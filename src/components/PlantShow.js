@@ -43,7 +43,8 @@ class PlantShow extends Component {
                         <p><strong>Experience Level:</strong> {plant.exp_level}</p>
                         <p><strong>Light Required:</strong> {plant.light_required}</p>
                         <p><strong>Pet Friendly:</strong> {plant.pet_friendly ? "Yes. This plant is safe for pets" : "No. This plant is not safe for pets"}</p>
-                    <button data-plant-id={plant.id} onClick={event => this.addToCart(event)}> Add To Cart </button>
+                    <button data-plant-id={plant.id} onClick={event => this.addToCart(event)}> Add To Cart </button> 
+                    <Link to="/"><button>Go Back</button></Link>
                 </div> 
                 </div>
             )      
