@@ -55,7 +55,6 @@ class App extends React.Component {
      visibilityFilter: {
        ...this.state.visibilityFilter,
        [event.target.name]: event.target.value
-       
      }       
    })
  }
@@ -70,7 +69,18 @@ class App extends React.Component {
   })
  }
 
-  
+  resetState = () => {
+    this.setState({
+      search: "",
+      visibilityFilter: {
+        price: null,
+        size: null,
+        expLevel: null,
+        lightRequired: null
+      },
+      petFriendly: false,
+    })
+  }
  componentDidMount(){
    this.checkForUser()
  }
@@ -82,9 +92,9 @@ class App extends React.Component {
         
           <div>
             <Link to="/">
-            <div id="app-header">
+            <div id="app-header" onClick={this.resetState}>
               <img src="https://www.dropbox.com/s/ovyh7qkl5p232sc/gtglogo.png?raw=1" alt="plants-letters-font" border="0"/>
-              <p className="slogan">
+              <p className="slogan" onClick={this.resetState}>
                 <img src="https://www.dropbox.com/s/uf7qka4e79pf06t/gtgbotaneeds.png?raw=1" alt="miralight-font" border="0"/>
               </p>
             </div>
