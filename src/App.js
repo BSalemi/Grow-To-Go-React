@@ -114,12 +114,14 @@ class App extends React.Component {
         
       </div> : 
       <div className="cover-image">
-        <h1 class="heading-primary">
-          <span class="heading-primary-main">Grow To Go</span>
-          <span class="heading-primary-sub">For All Your Botaneeds</span>
-        </h1>
+        <div className="heading-text-box">
+          <h1 className="heading-primary">
+            <span className="heading-primary-main">Grow To Go</span>
+            <span className="heading-primary-sub">For All Your Botaneeds</span>
+          </h1>
 
-        <button>Get Shopping</button>
+          <a href="/" className="bttn bttn-white bttn-animated">Get Shopping</a>
+        </div>
       </div>
      } </div>
     );
