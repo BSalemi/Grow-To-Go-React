@@ -25,6 +25,7 @@ class App extends React.Component {
       lightRequired: null
     },
     petFriendly: false,
+    isClicked: false
   }
 
 
@@ -88,6 +89,8 @@ class App extends React.Component {
 
   render(){
     return (
+      <div>
+     {this.state.isClicked ?  
       <div className="App">
         
           <div>
@@ -109,7 +112,16 @@ class App extends React.Component {
             <Route exact path="/plants/:id" component={PlantShow} />
             <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter} petFriendly={this.state.petFriendly}/>}/>
         
+      </div> : 
+      <div className="cover-image">
+        <h1 class="heading-primary">
+          <span class="heading-primary-main">Grow To Go</span>
+          <span class="heading-primary-sub">For All Your Botaneeds</span>
+        </h1>
+
+        <button>Get Shopping</button>
       </div>
+     } </div>
     );
   }
   }

@@ -1,6 +1,7 @@
 html, body {
   background-color: blanchedalmond;
   padding: 0px;
+  min-height: 100% ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
   
@@ -8,6 +9,18 @@ html, body {
 
 .App{
   background-color:blanchedalmond
+}
+
+.cover-image{
+  background-image:  linear-gradient(
+          to right bottom,
+          rgba(126, 213, 111, 0.8), 
+          rgba(40, 180, 133, 0.8) ),  url(./img/Monstera-deliciosa.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  height: 100vh;
+  background-repeat: repeat-y;
 }
 
 code {
@@ -149,6 +162,7 @@ a, a:active, a:visited {
   height: 50px;
   background-color: blanchedalmond;
 }
+
 
 #login-submit {
   border-radius: 25px;
