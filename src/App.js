@@ -56,7 +56,7 @@ class App extends React.Component {
      visibilityFilter: {
        ...this.state.visibilityFilter,
        [event.target.name]: event.target.value
-     }       
+     }
    })
  }
  
@@ -82,6 +82,13 @@ class App extends React.Component {
       petFriendly: false,
     })
   }
+
+  setIsClicked = () => {
+    this.setState({
+      isClicked: true
+    })
+  }
+
  componentDidMount(){
    this.checkForUser()
  }
@@ -92,7 +99,6 @@ class App extends React.Component {
       <div>
      {this.state.isClicked ?  
       <div className="App">
-        
           <div>
             <Link to="/">
             <div id="app-header" onClick={this.resetState}>
@@ -120,7 +126,7 @@ class App extends React.Component {
             <span className="heading-primary-sub">For All Your Botaneeds</span>
           </h1>
 
-          <a href="/" className="bttn bttn-white bttn-animated">Get Shopping</a>
+          <a href="#" className="bttn bttn-white bttn-animated" onClick={this.setIsClicked}>Get Shopping</a>
         </div>
       </div>
      } </div>
