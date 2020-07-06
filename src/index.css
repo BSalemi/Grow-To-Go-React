@@ -23,7 +23,6 @@ html, body {
   position: relative;
   height: 100vh;
   background-repeat: repeat-y;
-  z-index: 0;
 }
 
 .heading-text-box{
@@ -38,6 +37,9 @@ html, body {
   color: #fff;
   text-transform: uppercase;
   font-family: "Lato", sans-serif;
+
+  margin-bottom: 60px;
+  backface-visibility: hidden;
 }	
 
 .heading-primary-main {
@@ -45,6 +47,8 @@ html, body {
   font-size: 60px;	   
   font-weight: 400;	    
   letter-spacing: 35px;	
+
+  animation: moveInLeft 1s ease-out;
 }
 
 .heading-primary-sub {	
@@ -53,7 +57,54 @@ html, body {
   font-weight: 700;	    
   letter-spacing: 17.4px;   
   font-family: 'Lato';
+
+  animation: moveInRight 1s ease-out;
 }
+
+@keyframes moveInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+
+  80% {
+      transform: translateX(10px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(100px);
+  }
+
+  80% {
+      transform: translateX(-10px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
 
 .bttn:link,
 .bttn:visited {
@@ -79,7 +130,33 @@ html, body {
   background-color: white;
   color: #777;
   padding: 15px 40px;
+}
 
+.bttn-animated{
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+}
+
+.bttn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.bttn-white::after{
+  background-color: #FFF;
+}
+
+.bttn:hover::after{
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0
 }
 
 code {
