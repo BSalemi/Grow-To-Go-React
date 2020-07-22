@@ -183,15 +183,15 @@ code {
 
 .plant-card{
   background: rgba(253, 188, 180, 0.774);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .plant-pic{
-  border: 5px ridge #b4d1fd;
+  border: 5px outset #b4d1fd;
   height: 393px;
   width:324px;
   transition: all .2s ease-in-out;
@@ -215,15 +215,15 @@ code {
 }
 
 .plant-show-pic{
-  border: 5px ridge brown;
+  border: 5px outset #b4d1fd;;
   height: 393px;
-  width: 324 px;
+  width: 324px;
 }
 
 .plant-show-container button {
-  background-color: brown;
+  background-color: #b4d1fd;;
   color: white;
-  border: maroon solid 2px;
+  border: 5px outset #b4d1fd;;
   border-radius: 25px;
   transition: all .2s ease-in-out;
   margin: 5px;
@@ -234,9 +234,9 @@ code {
 }
 
 #review-submit {
-  background-color: brown;
+  background-color: #b4d1fd;
   color: white;
-  border: maroon solid 2px;
+  border: #b4d1fd outset 5px;
   border-radius: 25px;
   transition: all .2s ease-in-out;
 }
@@ -247,7 +247,7 @@ code {
 
 
 #cart-box{
-  border: 5px ridge brown;
+  border: 5px outset #b4d1fd;
   background-color: white;
   position:absolute;
   top:70px;
@@ -256,14 +256,14 @@ code {
   height: auto;
   max-height: 30em;
   display: none;
-  /* justify-content: left */
+  
 }
 
 .cart-container{
   text-align: left
 }
 #search-input{
-  border: 2px ridge brown
+  border: 2px outset #b4d1fd
 }
 
 .plant-price{
@@ -288,9 +288,9 @@ a, a:active, a:visited {
 }
 
 .plant-card button {
-  background-color: brown;
+  background-color: #b4d1fd;
   color: white;
-  border: maroon solid 2px;
+  border: 5px outset #b4d1fd;
   border-radius: 25px;
   transition: all .2s ease-in-out;
 }
@@ -304,7 +304,8 @@ a, a:active, a:visited {
   position:absolute;
   top:70px;
   right: 50px;
-  background-color: #f7d9ef
+  background-color: #c7f3e5;
+  border: #c7f3e5 2px outset
 }
 
 #logout{
@@ -312,7 +313,8 @@ a, a:active, a:visited {
   top:70px;
   left: 50px;
   height: 50px;
-  background-color: #f7d9ef;
+  background-color:#c7f3e5;
+  border: #c7f3e5 2px outset
 }
 
 
@@ -442,8 +444,8 @@ a, a:active, a:visited {
 .leave-review{
   width: 150px;
   border-radius: 25px;
-  border: 2px solid maroon;
-  background-color: brown;
+  border: 5px outset #b4d1fd;
+  background-color: #b4d1fd;
   color: white;
   transition: all .2s ease-in-out;
 }
