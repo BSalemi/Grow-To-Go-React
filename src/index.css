@@ -8,10 +8,10 @@ html, body {
 }
 
 body{
-  background-image: linear-gradient(
-    to right bottom,
-     rgba(247, 217, 240, 0.4),
-     rgba(247, 217, 240, 0.4)), url(./img/Monstera-deliciosa.jpg); 
+  background-image: linear-gradient( 
+    to right bottom, 
+    rgba(180, 253, 225, 0.7),
+    rgba(180, 253, 225,0.7)), url(./img/Monstera-deliciosa.jpg); 
   background-size: cover;
   background-position: top;
   position: relative;
@@ -181,8 +181,17 @@ code {
   justify-content: space-evenly;
 }
 
+.plant-card{
+  background: rgba(253, 188, 180, 0.774);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 .plant-pic{
-  border: 5px ridge brown;
+  border: 5px ridge #b4d1fd;
   height: 393px;
   width:324px;
   transition: all .2s ease-in-out;
@@ -265,7 +274,7 @@ code {
 .sort-menus{
   display: flex;
   justify-content: space-evenly;
-  align-items: center
+  align-items: center;
 }
 
 a h3:hover {
@@ -295,7 +304,7 @@ a, a:active, a:visited {
   position:absolute;
   top:70px;
   right: 50px;
-  background-color: blanchedalmond
+  background-color: #f7d9ef
 }
 
 #logout{
@@ -303,7 +312,7 @@ a, a:active, a:visited {
   top:70px;
   left: 50px;
   height: 50px;
-  background-color: blanchedalmond;
+  background-color: #f7d9ef;
 }
 
 

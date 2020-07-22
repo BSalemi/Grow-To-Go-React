@@ -97,12 +97,9 @@ class PlantContainer extends Component {
 
     render() {
         return (
-            <>
-            <br/>
             <div className="plant-container">
                 {this.generatePlants()}
             </div>
-            </>
         )
     }
 }
