@@ -183,6 +183,7 @@ code {
 
 .plant-card{
   background: rgba(253, 188, 180, 0.774);
+  border: rgb(255, 189, 181) outset 5px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 5px;
@@ -211,8 +212,16 @@ code {
   text-align: left;
   right: 550px;
   top: 250px;
-  flex-grow:1
+  flex-grow:1;
+  background: rgb(255, 204, 198);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  border: rgb(255, 189, 181) outset 5px;
 }
+
 
 .plant-show-pic{
   border: 5px outset #b4d1fd;;
@@ -247,8 +256,8 @@ code {
 
 
 #cart-box{
-  border: 5px outset #b4d1fd;
-  background-color: white;
+  border: 4px outset #b4d1fd;
+  background-color: rgb(255, 204, 198);
   position:absolute;
   top:70px;
   right: 25px;
@@ -356,8 +365,8 @@ a, a:active, a:visited {
   font-size: 85%;
   align-content:right;
   border-radius: 25px;
-  border: 2px solid maroon;
-  background-color: brown;
+  border: #b4d1fd 3px outset;
+  background-color: #b4d1fd;
   color: white;
   transition: all .2s ease-in-out;
 }
