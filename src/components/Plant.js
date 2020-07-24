@@ -23,10 +23,10 @@ class PlantCard extends Component {
                 <>
                 <div>
                 <br/>
-                <Link style={{textDecoration: "none", color: "brown"}} to={"/plants/" + this.props.id}> <img className="plant-pic" alt="house-plant" src={this.props.image} /></Link>
+                <Link to={"/plants/" + this.props.id}> <img className="plant-pic" alt="house-plant" src={this.props.image} /></Link>
                 </div>
                 <>
-                <Link style={{textDecoration: "none", color: "brown"}} to={"/plants/" + this.props.id}> <h3>{this.props.name}</h3></Link>
+                <Link to={"/plants/" + this.props.id}> <h3>{this.props.name}</h3></Link>
                 <h6 className="plant-price">${this.props.price}</h6>
                 {this.props.user ? <button data-plant-id={this.props.id} onClick={event => this.addToCart(event)}> Add To Cart </button> : null }
                 </>

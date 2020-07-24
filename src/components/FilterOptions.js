@@ -1,10 +1,9 @@
 import React from 'react'
 
 
-
 const FilterOptions = (props) => {
-    
         return (
+
             <div className="sort-menus">
             <div className="sort-menu-children">
                 <label value="select-price"><strong style={{padding: "3px"}}>Price:</strong></label>

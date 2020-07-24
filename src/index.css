@@ -182,13 +182,14 @@ code {
 }
 
 .plant-card{
-  background: rgba(253, 188, 180, 0.774);
+  background: rgba(253, 188, 180, 0.89);
   border: rgb(255, 189, 181) outset 5px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 5px;
   margin-bottom: 5px;
   margin-top: 10px;
+  color: rgba(112, 224, 181)
 }
 
 .plant-pic{
@@ -230,7 +231,7 @@ code {
 }
 
 .plant-show-container button {
-  background-color: #b4d1fd;;
+  background-color: #b4d1fd;
   color: white;
   border: 5px outset #b4d1fd;;
   border-radius: 25px;
@@ -277,23 +278,64 @@ code {
 
 .plant-price{
   font-size: 10;
-  font-style: initial
+  font-style: initial;
+  color: rgb(193, 249, 228);
+  font-size: 25px;
+  font-weight: 900;
+  font-family: 'Lato';
+  font-variant: small-caps;
+
 }
 
 .sort-menus{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-family: 'Lato';
 }
 
-a h3:hover {
- cursor: pointer;
- color: maroon;
-
+#price-dropdown{
+  color:rgba(255, 175, 166);
+  font-family: 'Lato';
+  font-weight: 600
 }
 
-a, a:active, a:visited {
-  color: brown;
+#size-dropdown{
+  color:rgb(255, 175, 166);
+  font-family: 'Lato';
+  font-weight: 600
+}
+
+#exp-level-dropdown{
+  color:rgba(255, 175, 166);
+  font-family: 'Lato';
+  font-weight: 600
+}
+
+#light-required-dropdown {
+  color: rgba(255, 175, 166);
+  font-family: 'Lato';
+  font-weight: 600
+}
+
+
+.plant-card a {
+  color: #c1f9e4;
+  text-decoration: none;
+  font-family: 'Lato';
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.plant-card a:hover {
+  color: rgba(112, 224, 181);
+  text-decoration: none;
+}
+
+.plant-card h3 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  font-variant: all-petite-caps;
 }
 
 .plant-card button {
