@@ -112,6 +112,22 @@ body{
   }
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.toggle-filter{
+  position: absolute;
+  left: 40px;
+}
+
+.toggle-clicked{
+  position: absolute;
+  top: 170px;
+  left: 65px;
+}
+
+
 
 .bttn:link,
 .bttn:visited {
