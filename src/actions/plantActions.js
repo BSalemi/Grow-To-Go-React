@@ -8,7 +8,7 @@ export const fetchPlants = () => dispatch => {
         dispatch({
             type: FETCH_PLANTS,
             payload: plants
-        })  
+        })
     })
 }
 
@@ -19,7 +19,7 @@ export const findPlant = (id) => dispatch => {
         dispatch({
             type: FIND_PLANT,
             payload: plant
-        })  
+        })
     })
 }
 export const addReview = (review) => dispatch => {
@@ -33,16 +33,14 @@ export const addReview = (review) => dispatch => {
     })
     .then(res => res.json())
     .then((review) => {
-        console.log(JSON.stringify(review, "review in dispatch"))
         dispatch({
-            
             type: ADD_REVIEW,
             payload: review
         })
     })}
 
 export const deleteReview = (reviewId) => dispatch => {
-    
+
     fetch(REVIEWS_URL + "/" + reviewId, {
         method: "DELETE",
         headers: {

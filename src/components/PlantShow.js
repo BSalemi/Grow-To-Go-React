@@ -8,13 +8,13 @@ import Reviews from "./Reviews";
 
 
 class PlantShow extends Component {
-    
-   
+
+
     componentDidMount(){
         this.props.findPlant(this.props.match.params.id)
     }
 
-   
+
     addToCart = event => {
         event.preventDefault()
         let cartId = this.props.user.user.carts[this.props.user.user.carts.length - 1].id
@@ -24,9 +24,7 @@ class PlantShow extends Component {
         }
         this.props.addCartPlant(cart_plant)
     }
-        
-       
-  
+
     renderPlant =() => {
         let plant = this.props.plants.foundPlant
         if(plant){
@@ -45,21 +43,20 @@ class PlantShow extends Component {
                         <p><strong>Pet Friendly:</strong> {plant.pet_friendly ? "Yes. This plant is safe for pets" : "No. This plant is not safe for pets"}</p>
                     <button data-plant-id={plant.id} onClick={event => this.addToCart(event)}> Add To Cart </button> 
                     <Link to="/"><button>Go Back</button></Link>
-                </div> 
                 </div>
-            )      
+                </div>
+            )
         } else {
             return(
-                    <> 
+                    <>
                     No plant with that ID was found.
                     <br/>
                    <Link to="/">Return Home </Link>
-                   </>  
+                   </>
             )
         }
     }
-     
-    
+
     render(){
         return (
             <div className="show-page">
@@ -75,13 +72,13 @@ class PlantShow extends Component {
                 </div>
                 }
             </div>
-        ) 
+        )
     }
-    }
+}
 
 const mapStateToProps = (state) => ({
     user: state.user,
     plants: state.plants
 })
-    
+
 export default connect(mapStateToProps, {findPlant, addCartPlant})(PlantShow)

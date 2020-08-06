@@ -59,7 +59,7 @@ class App extends React.Component {
      }
    })
  }
- 
+
 
  setPetFriendly = () => {
   this.setState(prevState => {
@@ -117,8 +117,8 @@ class App extends React.Component {
             <Route exact path="/login" component={LoginForm} />
             <Route exact path="/plants/:id" component={PlantShow} />
             <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter} petFriendly={this.state.petFriendly}/>}/>
-        
-      </div> : 
+
+      </div> :
       <div className="cover-image">
         <div className="heading-text-box">
           <h1 className="heading-primary">

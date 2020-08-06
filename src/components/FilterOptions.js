@@ -16,7 +16,7 @@ class FilterOptions extends Component {
 
         return (
         <>
-            <div className="toggle-filter" onClick={this.toggleFilters}>Filter Options</div>
+            <div className="toggle-filter" onClick={this.toggleFilters}>Filter Options </div>
 
             <div className="sort-menus hidden">
                 <div className="sort-menu-children">

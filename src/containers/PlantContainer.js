@@ -17,16 +17,16 @@ class PlantContainer extends Component {
     filterPlants(){
         return this.props.plants.fetchedPlants.filter(plantObj => {
             return plantObj.name.toLowerCase().includes(this.props.search.toLowerCase())
-        })  
+        })
     }
 
-        
-    filterVisiblePlants = () => { 
+
+    filterVisiblePlants = () => {
         let filtered = this.filterPetFriendly()
         console.log(filtered, "filterPetFriendly")
-        
+
         let visFilter = this.props.visibilityFilter
-        
+
         if(visFilter.price === "sort_price_asc"){
             filtered = filtered.sort((a, b) => (a.price > b.price) ? 1 : -1 ); 
         }
@@ -74,10 +74,10 @@ class PlantContainer extends Component {
         }
         if(visFilter.lightRequired === "find_full_sun"){
             filtered = filtered.filter(plant => plant.light_required.includes("Full Sun"));
-        }  
+        } 
         return filtered
     }
-                    
+
     generatePlants = () => {
         if(this.filterVisiblePlants() && (this.props.visibilityFilter || this.props.petFriendly) && this.props.search === ""){
             return this.filterVisiblePlants().map(plant => {
