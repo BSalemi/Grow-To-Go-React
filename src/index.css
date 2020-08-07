@@ -282,20 +282,22 @@ code {
 
 #cart-box{
   background: rgba(190, 220, 188, 0.9);
-  border: rgba(69, 125, 64) outset 5px;
+  border: #ffd4fe outset 5px;
   border-radius: 25px;
   position:absolute;
   top:70px;
   right: 25px;
-  overflow: scroll;
-  height: auto;
-  max-height: 30em;
+  /* overflow-y: auto;
+  height: 100px;
+  max-height: 30em; */
   display: none;
   
 }
 
 .cart-container{
-  text-align: left
+  text-align: left;
+  max-height: 50em;
+  overflow-y: auto;
 }
 
 #search-input{
@@ -391,8 +393,9 @@ code {
   position:absolute;
   top:70px;
   right: 50px;
-  background-color: #c7f3e5;
-  border: #c7f3e5 2px outset
+  background-color: #ffd4fe;
+  border:black 3px outset;
+  opacity: 90%
 }
 
 #logout{
@@ -400,15 +403,16 @@ code {
   top:70px;
   left: 50px;
   height: 50px;
-  background-color:#c7f3e5;
-  border: #c7f3e5 2px outset
+  background-color:#ffd4fe;
+  border: black 3px outset;
+  opacity: 90%
 }
 
 
 #login-submit {
   border-radius: 25px;
-  border: 2px solid maroon;
-  background-color: brown;
+  border: 2px solid #457D40;
+  background-color: #457D40 ;
   color: white;
   transition: all .2s ease-in-out;
 }
@@ -498,9 +502,14 @@ code {
 
 .review-container{
   max-height: 300px;
-  width: 420px;
+  width: min-content;
   overflow-y: auto;
   padding: 10px;
+  background: rgba(190, 220, 188, 0.9);
+  margin-left: 10px;
+  border: rgba(69, 125, 64) 5px outset;
+  border-radius: 25px;
+  min-width: 300px;
 }
 .show-reviews{
   display: flex;
