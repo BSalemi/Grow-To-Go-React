@@ -15,7 +15,6 @@ export function plantReducer(state = initialState, action){
                 foundPlant: action.payload
             }
         case ADD_REVIEW:
-            console.log(state, "state in reducer")
             return {
                 ...state,
                 foundPlant: {
