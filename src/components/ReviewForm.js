@@ -19,7 +19,6 @@ class ReviewForm extends React.Component {
     }
 
     handleOnSubmit = (event)=> {
-        
         event.preventDefault();
         const review = {
             title: this.state.title,
@@ -30,7 +29,8 @@ class ReviewForm extends React.Component {
         this.props.addReview(review);
         this.setState({
             title: "",
-            body: ""
+            body: "",
+            visibility: false
         })
     }
 
@@ -38,7 +38,6 @@ class ReviewForm extends React.Component {
         this.setState({
             visibility: !this.state.visibility
         })
-        console.log(this.state.visibility)
     }
     render() {
 

@@ -122,7 +122,8 @@ body{
   font-family: 'Lato';
   font-size: 20px;
   font-weight: 900;
-  color: #102056
+  color: #102056;
+  cursor: pointer;
 }
 
 .toggle-clicked{
@@ -235,26 +236,28 @@ code {
   right: 550px;
   top: 250px;
   flex-grow:1;
-  background: rgb(255, 204, 198);
+  background: rgba(190, 220, 188, 0.9);
+  border: rgba(69, 125, 64) outset 5px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 5px;
   margin-bottom: 15px;
   padding-top: 10px;
-  border: rgb(255, 189, 181) outset 5px;
+  border-radius: 25px;
 }
 
 
 .plant-show-pic{
-  border: 5px outset #b4d1fd;;
+  border: 5px outset #FFD4FE;
+  border-radius: 25px;
   height: 393px;
   width: 324px;
 }
 
 .plant-show-container button {
-  background-color: #b4d1fd;
+  background-color: rgba(69, 125, 64);
   color: white;
-  border: 5px outset #b4d1fd;;
+  border: 5px outset rgba(69, 125, 64);
   border-radius: 25px;
   transition: all .2s ease-in-out;
   margin: 5px;
@@ -265,9 +268,9 @@ code {
 }
 
 #review-submit {
-  background-color: #b4d1fd;
+  background-color: #457d40;
   color: white;
-  border: #b4d1fd outset 5px;
+  border: #457d40 outset 5px;
   border-radius: 25px;
   transition: all .2s ease-in-out;
 }
@@ -278,8 +281,9 @@ code {
 
 
 #cart-box{
-  border: 4px outset #b4d1fd;
-  background-color: rgb(255, 204, 198);
+  background: rgba(190, 220, 188, 0.9);
+  border: rgba(69, 125, 64) outset 5px;
+  border-radius: 25px;
   position:absolute;
   top:70px;
   right: 25px;
@@ -360,7 +364,7 @@ code {
 }
 
 .plant-card a:hover {
-  color: rgba(112, 224, 181);
+  color: #457D40;
   text-decoration: none;
 }
 
@@ -439,8 +443,8 @@ code {
   font-size: 85%;
   align-content:right;
   border-radius: 25px;
-  border: #b4d1fd 3px outset;
-  background-color: #b4d1fd;
+  border: #457d40 3px outset;
+  background-color: #457d40;
   color: white;
   transition: all .2s ease-in-out;
 }
@@ -527,9 +531,9 @@ code {
 .leave-review{
   width: 150px;
   border-radius: 25px;
-  border: 5px outset #b4d1fd;
-  background-color: #b4d1fd;
+  background-color: rgba(69, 125, 64);
   color: white;
+  border: 5px outset rgba(69, 125, 64);
   transition: all .2s ease-in-out;
 }
 
