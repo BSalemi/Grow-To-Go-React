@@ -196,8 +196,17 @@ code {
   padding-top: 50px;
   width: min-content;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(190, 220, 188, 0.9);
   margin-bottom: 15px;
+  padding: 50px 15px 3px 15px;
+  border: #ffd4fe 4px outset;
+  border-radius: 25px;
+}
+
+.logo-image {
+  margin: 0 auto;
+  width: auto;
+  display: block
 }
 
 .plant-container{
@@ -444,7 +453,7 @@ code {
 #total-checkout{
   display: inline-block;
   font-size: 110%;
-  padding-left: 10px;
+  padding: 0 10px 10px 3px;
   margin-left: 35px;
 }
 
@@ -454,7 +463,7 @@ code {
 }
 
 #checkout{
-  padding: 3px;
+  padding:3px;
   height: auto;
   width: max-content;
   font-size: 90%;

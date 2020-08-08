@@ -28,7 +28,6 @@ class CartPlantContainer extends Component {
 
     renderCart(){
         let cartContainer = document.getElementById("cart-box")
-    
         if(this.state.visible && cartContainer){
             cartContainer.style.display = "block"
         } else if (!this.state.visible && cartContainer){
@@ -58,13 +57,12 @@ class CartPlantContainer extends Component {
     }
 
     render() {
-        const cartLength = this.props.user.carts[this.props.user.carts.length - 1].cart_plants.length
 
         return (
             <div className="cart-container"onMouseLeave={this.handleOnMouse}>
                <button id='cart-btn' onMouseOver={this.handleOnMouse}><img alt="cart" src={`${cartIcon}`}/></button>
-              <div id="cart-box" >
-                  {cartLength === 0 ?
+              {this.props.user.carts && <div id="cart-box" >
+                  {this.props.user.carts[this.props.user.carts.length - 1].cart_plants.length === 0 ?
 
                   <p className="empty-cart">
                       Oh no! It seems your cart is empty.
@@ -85,6 +83,7 @@ class CartPlantContainer extends Component {
                 </>
                 }
               </div>
+    }
             </div>
         )
     }

@@ -102,7 +102,7 @@ class App extends React.Component {
           <div>
             <Link to="/">
             <div id="app-header" onClick={this.resetState}>
-              <img src="https://www.dropbox.com/s/ovyh7qkl5p232sc/gtglogo.png?raw=1" alt="plants-letters-font" border="0"/>
+              <img className="logo-image" src="https://www.dropbox.com/s/ovyh7qkl5p232sc/gtglogo.png?raw=1" alt="plants-letters-font" border="0"/>
               <p className="slogan" onClick={this.resetState}>
                 <img src="https://www.dropbox.com/s/uf7qka4e79pf06t/gtgbotaneeds.png?raw=1" alt="miralight-font" border="0"/>
               </p>
