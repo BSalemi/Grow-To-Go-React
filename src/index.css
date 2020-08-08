@@ -260,25 +260,29 @@ code {
 
 .plant-show-container-left{
  height: 393px;
- left: 50px;
  flex-grow:1;
+ margin-right:2px
 }
 
 .plant-show-container-right{
+  height:393px;
   text-align: left;
-  right: 550px;
-  top: 250px;
   flex-grow:1;
   background: rgba(190, 220, 188, 0.9);
   border: rgba(69, 125, 64) outset 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 5px;
   margin-bottom: 15px;
-  padding-top: 10px;
+  margin-right: 2px;
   border-radius: 25px;
+  padding: 10px 10px 5px 10px 
 }
 
+.plant-show-container-right h3 {
+  color: #102056
+}
+
+.plant-show-container-right p > strong {
+  color: #102056
+}
 
 .plant-show-pic{
   border: 5px outset #FFD4FE;
@@ -287,6 +291,7 @@ code {
   width: 324px;
 }
 
+
 .plant-show-container button {
   background-color: rgba(69, 125, 64);
   color: white;
@@ -294,6 +299,7 @@ code {
   border-radius: 25px;
   transition: all .2s ease-in-out;
   margin: 5px;
+  margin-top: 20px
 }
 
 .plant-show-container button:hover{
@@ -532,6 +538,7 @@ code {
 
 .show-page{
   display: flex;
+  justify-content: space-evenly;
 }
 .review-form {
   padding: 3px;
@@ -596,10 +603,13 @@ code {
 .leave-review{
   width: 150px;
   border-radius: 25px;
-  background-color: rgba(69, 125, 64);
+  background-color: #102056;
   color: white;
-  border: 5px outset rgba(69, 125, 64);
+  border: 5px outset #102056;
   transition: all .2s ease-in-out;
+  font-family: 'Lato';
+  font-size: 18px;
+  font-weight: 700
 }
 
 .leave-review:hover{
@@ -609,5 +619,6 @@ code {
 
 .plant-show-container {
   display: flex;
-  flex-grow:2
+  flex-grow:1
 }
+
