@@ -94,10 +94,11 @@ class App extends React.Component {
  }
 
 
+
   render(){
     return (
       <div>
-     {this.state.isClicked ?  
+     {this.state.isClicked ? 
       <div className="App">
           <div>
             <Link to="/">
@@ -111,11 +112,11 @@ class App extends React.Component {
             </div>
             <Logout/>
             <CartPlantContainer/>
-            <SearchBar updateSearch={this.updateSearch}/>
             <br/>
-            <FilterOptions setVisibilityFilter={this.setVisibilityFilter} setPetFriendly={this.setPetFriendly}/>
             <Route exact path="/login" component={LoginForm} />
             <Route exact path="/plants/:id" component={PlantShow} />
+            <Route exact path="/" render={(routeProps) =>  <SearchBar {...routeProps} updateSearch={this.updateSearch}/> }/>
+            <Route exact path="/" render={(routeProps) =>  <FilterOptions {...routeProps}setVisibilityFilter={this.setVisibilityFilter} setPetFriendly={this.setPetFriendly}/> }/>
             <Route exact path="/" render={(routeProps)=> <PlantContainer {...routeProps} search={this.state.search} visibilityFilter={this.state.visibilityFilter} petFriendly={this.state.petFriendly}/>}/>
 
       </div> :
