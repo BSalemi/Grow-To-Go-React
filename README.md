@@ -1,4 +1,4 @@
-![Grow To Go logo](https://fontmeme.com/permalink/190910/cd6f2ab7e2bb65d7267bc46d5894d410.png)
+![Grow To Go logo](https://i.imgur.com/EWCxpmq.png)
 
 # Grow To Go
 
@@ -7,7 +7,8 @@ Grow To Go is a mock ecommerce site that helps users find the perfect houseplant
 Grow To Go is hosted on Heroku and can be found [ here ](https://grow-to-go.herokuapp.com) Please use the dummy data below to log in to Grow To Go if you do not wish to sign up.
 
 <b>Username:</b> TEST
-<b>Email:</b>TEST@example.com
+<br/>
+<b>Email:</b> TEST@example.com
 
 ## Installation
 
@@ -27,29 +28,29 @@ https://github.com/BSalemi/Grow-to-Go-backend
 
 ## Usage
 
-Upon launching the application, the user can navigate to localhost:PortNumber/ to arrive at the application login page prompting the user sign-up or log-in.
+Upon launching the application, users can navigate to localhost:PortNumber to arrive at the landing page. Clicking the `GET SHOPPING` button will bring users to the login page to either sign-up or log-in. 
 
-Following a successful user sign-up or log-in, the user will arrive at Grow to Go's homepage. Once the homepage is rendered, a fetch request is made to the Rails backend to collect and render all of the houseplants found in the seed file. 
+Following a successful user sign-up or log-in, users will arrive at Grow To Go's homepage and be met with the full inventory of plants. 
 
-[![Grow To Go Screen Grab](https://i.imgur.com/EWCxpmq.png)](https://vimeo.com/366899721)
+[![Grow To Go Screen Grab](https://i.imgur.com/XhIXIVy.png)](https://vimeo.com/366899721)
 
-From here, the user has a number of different options to find the perfect plant for their situation. 
+
+From here, users have a number of different options to find the perfect plant for them. 
+
 
    * Sort for plants by:
     	- Price
     	- Size
     	- Experience Level
-    	- Light Requirements 
+    	- Light Requirements
       - Pet Friendliness/Non-toxic to cats and dogs
-      
-   * Use the search feature to find plants directly by name. 
-   * Click on a plant to be brought to that particular plant's show page which includes more information about that plant.
-   * Leave a review for each particular plant.
-   * Add a desired plant to their shopping cart by clicking the associated Add to Cart button.
-   * Hover over the Shopping Cart icon to display the contenets of the user's cart.
-   * Remove a plant from their cart by clicking on the Trash Bin icon.
-   * Increment or decrement a plant in their cart by clicking the + or trash can icons.
-   * Complete their transaction by clicking the Checkout button.
+   * Use the search feature to find plants directly by name.
+   * Click on a plant to be brought to that particular plant's show page which includes additional information about and reviews for that plant. Users can also leave their own review or delete their past reviews here.
+   ![Grow To Go Screen Grab](https://i.imgur.com/liUR3sE.png)
+   * Add a desired plant to their shopping cart by clicking the `Add to Cart` button.
+   * Hover over the Cart icon to display the contents of their cart.
+   * Increment or decrement/remove a plant in their cart by clicking the `+` or `trash can` icons.
+   * Complete their transaction by clicking the `Checkout` button.
    
 ## Contribution 
    
