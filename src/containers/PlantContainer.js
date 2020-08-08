@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Plant from '../components/Plant'
 
 class PlantContainer extends Component {
-   
+
     filterPetFriendly(){
         const plants = this.props.plants.fetchedPlants
         if(this.props.petFriendly){

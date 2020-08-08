@@ -4,8 +4,6 @@ import { addReview } from '../actions/plantActions'
 
 class ReviewForm extends React.Component {
 
-    
-
     state = {
         title: "",
         body: "",
@@ -40,7 +38,7 @@ class ReviewForm extends React.Component {
         })
     }
     render() {
-        const {visibility, body, title} = this.state 
+        const {visibility, body, title} = this.state
         return(
             <>
             <h3>Reviews</h3>

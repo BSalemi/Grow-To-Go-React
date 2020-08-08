@@ -15,7 +15,7 @@ import {connect} from 'react-redux'
 
 
 class App extends React.Component {
-  
+
   state = {
     search: "",
     visibilityFilter: {
