@@ -2,7 +2,12 @@
 
 # Grow To Go
 
-Flatiron School React & Redux Project - Grow To Go, a React / Redux application (with a Rails API backend), is a mock ecommerce site that allows users to find the perfect houseplant that fits their lifestyle, needs, and capabilities.  
+Grow To Go is a mock ecommerce site that helps users find the perfect houseplant that fits their lifestyle, needs, and capabilities. Grow To Go is built using a React and Redux front end and a Rails API back end. 
+
+Grow To Go is hosted on Heroku and can be found [ here ](https://grow-to-go.herokuapp.com) Please use the dummy data below to log in to Grow To Go if you do not wish to sign up.
+
+<b>Username:</b> TEST
+<b>Email:</b>TEST@example.com
 
 ## Installation
 
@@ -26,7 +31,7 @@ Upon launching the application, the user can navigate to localhost:PortNumber/ t
 
 Following a successful user sign-up or log-in, the user will arrive at Grow to Go's homepage. Once the homepage is rendered, a fetch request is made to the Rails backend to collect and render all of the houseplants found in the seed file. 
 
-[![Grow To Go Screen Grab](https://i.imgur.com/z5gl848.png)](https://vimeo.com/366899721)
+[![Grow To Go Screen Grab](https://i.imgur.com/EWCxpmq.png)](https://vimeo.com/366899721)
 
 From here, the user has a number of different options to find the perfect plant for their situation. 
 
