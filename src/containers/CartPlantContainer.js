@@ -5,7 +5,7 @@ import {cartIcon} from '../constants.js'
 import {checkout} from '../actions/userActions'
 
 class CartPlantContainer extends Component {
-   
+
     state = {
         visible: false
     }
@@ -26,9 +26,9 @@ class CartPlantContainer extends Component {
         }
     }
 
-    
     renderCart(){
         let cartContainer = document.getElementById("cart-box")
+    
         if(this.state.visible && cartContainer){
             cartContainer.style.display = "block"
         } else if (!this.state.visible && cartContainer){
@@ -36,11 +36,11 @@ class CartPlantContainer extends Component {
         }
     }
 
-   
+
     generateCartPlants = () => {
         let cartPlants = {}
         const currentCart = this.props.user.carts[this.props.user.carts.length - 1].cart_plants
-        currentCart.map(cart_plant => { 
+        currentCart.map(cart_plant => {
             if (!cartPlants[cart_plant.plant_id]){
                 cartPlants[cart_plant.plant_id] = [cart_plant]
             } else {
@@ -56,21 +56,34 @@ class CartPlantContainer extends Component {
             results
         )
     }
-    
-    render() {   
+
+    render() {
+        const cartLength = this.props.user.carts[this.props.user.carts.length - 1].cart_plants.length
+
         return (
             <div className="cart-container"onMouseLeave={this.handleOnMouse}>
                <button id='cart-btn' onMouseOver={this.handleOnMouse}><img alt="cart" src={`${cartIcon}`}/></button>
-              
               <div id="cart-box" >
-                <div id="users-cart">
-                    {this.props.user.carts && this.renderCart()}
-                    {this.props.user.carts && this.generateCartPlants()}
-                </div>
+                  {cartLength === 0 ?
+
+                  <p className="empty-cart">
+                      Oh no! It seems your cart is empty.
+                      <br/>
+                      <br/>
+                      Get shopping!
+                      {this.renderCart()}
+                  </p> :
+                    <>
+                    <div id="users-cart">
+                        {this.props.user.carts && this.renderCart()}
+                        {this.props.user.carts && this.generateCartPlants()}
+                    </div>
+
                 <div id="total-checkout">
                     <strong id="total">Total</strong> - ${this.props.user.carts && this.props.user.carts[this.props.user.carts.length - 1].total}             <button onClick={this.handleCheckout} id="checkout">Checkout</button>
                 </div>
-                
+                </>
+                }
               </div>
             </div>
         )
