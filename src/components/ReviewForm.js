@@ -41,7 +41,6 @@ class ReviewForm extends React.Component {
         const {visibility, body, title} = this.state
         return(
             <>
-            {/* <h3>Reviews</h3> */}
             <div>
                 <button onClick={this.toggleVisibility} className={visibility ? "hidden" : "leave-review"}>Leave Review</button>
             </div>

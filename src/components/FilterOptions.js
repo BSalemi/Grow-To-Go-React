@@ -12,7 +12,7 @@ class FilterOptions extends Component {
     }
 
     render(){
-        const {setVisibilityFilter, setPetFriendly} = this.props 
+        const {setVisibilityFilter, setPetFriendly, resetState} = this.props 
 
         return (
         <>
@@ -61,6 +61,10 @@ class FilterOptions extends Component {
                 <div className="sort-menu-children">
                     <label value="select-pet-friendly"><strong style={{padding: "3px"}}>Pet Friendly: </strong></label>
                     <input onClick={setPetFriendly}  defaultChecked={false} type="checkbox" id="pet-friendly-checkbox" value="pet-friendly"/>
+                </div>
+        
+                <div className="sort-menu-children">
+                    <button onClick={resetState} className="reset-filters">Reset</button>
                 </div>
             </div>
         </>

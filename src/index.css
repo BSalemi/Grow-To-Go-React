@@ -348,6 +348,7 @@ code {
 
 .search-input{
   margin-top:10px;
+  margin-bottom: 10px;
   border: 2px outset #FFD4FE;
   border-radius: 10px;
 }
@@ -379,7 +380,7 @@ code {
   font-family: 'Lato serif';
   font-size: 18px;
   background:rgba(190, 220, 188, 0.9);
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   border: 4px outset #ffd4fe;
   border-radius: 25px
@@ -388,7 +389,6 @@ code {
 .sort-menu-children{
   padding-top: 5px;
 }
-
 
 #price-dropdown{
   color: #457d40;
@@ -410,6 +410,16 @@ code {
   font-family: 'Lato serif';
 }
 
+.reset-filters{
+  background: #457d40;
+  border: #457d40 3px outset;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Lato';
+  font-size: 16px;
+  margin-left: 3px;
+  margin-bottom: 3px
+}
 
 .plant-card a {
   color: #102056;
