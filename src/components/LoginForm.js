@@ -20,14 +20,22 @@ class LoginForm extends React.Component {
     }
 
     handleOnSubmit = event => {
+        const {name, email} = this.state
         event.preventDefault()
-        const user = {
-            name: this.state.name,
-            email: this.state.email
+        if(name.length > 1 && email.length > 1){
+            const user = {
+                name: name,
+                email: email
+            }
+            
+            this.props.loginUser(user, this.props.history)
+            this.props.history.push('/')
+            this.props.fetchPlants()
+        } else {
+            alert("Please enter a username and email address to login.")
         }
-        this.props.loginUser(user, this.props.history)
-        this.props.history.push('/')
-        this.props.fetchPlants()
+
+        
     }  
 
     render(){
@@ -36,7 +44,7 @@ class LoginForm extends React.Component {
                 <form onSubmit={event => this.handleOnSubmit(event)}>
                     <input type="text" name="name" placeholder="Please enter your name" value={this.state.name} onChange={event => this.handleOnChange(event)}/> 
                     <br/>
-                    <input type="text" name="email" placeholder="Please enter your email" value={this.state.email} onChange={event => this.handleOnChange(event)}/>
+                    <input type="email" name="email" placeholder="Please enter your email" value={this.state.email} onChange={event => this.handleOnChange(event)}/>
                     <br/>
                     <input id="login-submit" type="submit" value="Get Shopping!"/>
                 </form>
