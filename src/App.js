@@ -25,13 +25,15 @@ class App extends React.Component {
       lightRequired: null
     },
     petFriendly: false,
-    isClicked: false
+    isClicked: false,
+    currentUserId: localStorage.loggedIn
   }
 
 
   checkForUser(){
-    if(localStorage.loggedIn){
-        let id = localStorage.loggedIn
+    const {currentUserId} = this.state
+    if(currentUserId){
+        let id = parseInt(currentUserId)
         fetch(USERS_URL + "/" + id)
         .then(res => res.json())
         .then((user_data => {

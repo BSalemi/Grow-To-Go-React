@@ -28,6 +28,7 @@ class CartPlantContainer extends Component {
 
     renderCart(){
         let cartContainer = document.getElementById("cart-box")
+
         if(this.state.visible && cartContainer){
             cartContainer.style.display = "block"
         } else if (!this.state.visible && cartContainer){

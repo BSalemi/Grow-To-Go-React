@@ -3,6 +3,7 @@ import { CART_PLANTS_URL, USERS_URL, CHECKOUT_URL } from '../constants'
 
 
 export const loginUser = (user, history) => dispatch => {
+     
     history.push('/') 
     fetch(USERS_URL, {
         method: "POST",
@@ -14,15 +15,11 @@ export const loginUser = (user, history) => dispatch => {
     })
     .then(res => res.json())
     .then((user_data) => {
-
-        console.log(user_data, "user_data");
-        console.log(user_data.id, "user_id");
-
         localStorage.loggedIn = user_data.id
         dispatch({
             type: LOGIN_USER,
             payload: user_data
-        })     
+        })
     })
 }
 
