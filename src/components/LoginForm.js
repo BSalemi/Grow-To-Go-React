@@ -1,57 +1,61 @@
-import React from 'react'
-import { loginUser } from '../actions/userActions'
-import {fetchPlants} from '../actions/plantActions'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import React, { useState } from "react";
+import { loginUser } from "../actions/userActions";
+import { fetchPlants } from "../actions/plantActions";
+import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
+const LoginForm = ({ loginUser, fetchPlants }) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
-class LoginForm extends React.Component {
-
-    state = {
-        name: "",
-        email: ""
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    if (name === "name") {
+      setName(value);
+    } else if (name === "email") {
+      setEmail(value);
     }
+  };
 
-
-    handleOnChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    if (name.length > 1 && email.length > 1) {
+      const user = {
+        name: name,
+        email: email,
+      };
+      loginUser(user);
+      navigate("/");
+      fetchPlants();
+    } else {
+      alert("Please enter a username and email address to login.");
     }
+  };
 
-    handleOnSubmit = event => {
-        const {name, email} = this.state
-        event.preventDefault()
-        if(name.length > 1 && email.length > 1){
-            const user = {
-                name: name,
-                email: email
-            }
-            
-            this.props.loginUser(user, this.props.history)
-            this.props.history.push('/')
-            this.props.fetchPlants()
-        } else {
-            alert("Please enter a username and email address to login.")
-        }
+  return (
+    <div id="login-form">
+      <form onSubmit={handleOnSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Please enter your name"
+          value={name}
+          onChange={handleOnChange}
+        />
+        <br />
+        <input
+          type="email"
+          name="email"
+          placeholder="Please enter your email"
+          value={email}
+          onChange={handleOnChange}
+        />
+        <br />
+        <input id="login-submit" type="submit" value="Get Shopping!" />
+      </form>
+    </div>
+  );
+};
 
-        
-    }  
-
-    render(){
-        return(
-            <div id="login-form">
-                <form onSubmit={event => this.handleOnSubmit(event)}>
-                    <input type="text" name="name" placeholder="Please enter your name" value={this.state.name} onChange={event => this.handleOnChange(event)}/> 
-                    <br/>
-                    <input type="email" name="email" placeholder="Please enter your email" value={this.state.email} onChange={event => this.handleOnChange(event)}/>
-                    <br/>
-                    <input id="login-submit" type="submit" value="Get Shopping!"/>
-                </form>
-            </div>
-        )
-    }
-}
-
-
-export default connect(null, {loginUser, fetchPlants})(withRouter(LoginForm))
+export default connect(null, { loginUser, fetchPlants })(LoginForm);
