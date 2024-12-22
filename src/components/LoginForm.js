@@ -36,6 +36,7 @@ const LoginForm = ({ loginUser, fetchPlants }) => {
   return (
     <div id="login-form">
       <form onSubmit={handleOnSubmit}>
+        <span>Name:</span>
         <input
           type="text"
           name="name"
@@ -44,6 +45,7 @@ const LoginForm = ({ loginUser, fetchPlants }) => {
           onChange={handleOnChange}
         />
         <br />
+        <span>Email:</span>
         <input
           type="email"
           name="email"
