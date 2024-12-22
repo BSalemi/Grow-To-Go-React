@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Route, link, useNavigate, withRouter, Link } from "react-router-dom";
+import { Route, Routes, useNavigate, Link } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import PlantContainer from "./containers/PlantContainer";
 import CartPlantContainer from "./containers/CartPlantContainer";
@@ -100,39 +100,41 @@ const App = ({ loginUser, fetchPlants }) => {
           <Logout />
           <CartPlantContainer />
           <br />
-          <Route exact path="/login" component={LoginForm} />
-          <Route exact path="/plants/:id" component={PlantShow} />
-          <Route
-            exact
-            path="/"
-            render={(routeProps) => (
-              <SearchBar {...routeProps} updateSearch={updateSearch} />
-            )}
-          />
-          <Route
-            exact
-            path="/"
-            render={(routeProps) => (
-              <FilterOptions
-                {...routeProps}
-                setVisibilityFilter={handleSetVisibilityFilter}
-                setPetFriendly={handleSetPetFriendly}
-                resetState={resetState}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/"
-            render={(routeProps) => (
-              <PlantContainer
-                {...routeProps}
-                search={search}
-                visibilityFilter={visibilityFilter}
-                petFriendly={petFriendly}
-              />
-            )}
-          />
+          <Routes>
+            <Route exact path="/login" element={<LoginForm />} />
+            <Route exact path="/plants/:id" element={<PlantShow />} />
+            <Route
+              exact
+              path="/"
+              render={(routeProps) => (
+                <SearchBar {...routeProps} updateSearch={updateSearch} />
+              )}
+            />
+            <Route
+              exact
+              path="/"
+              render={(routeProps) => (
+                <FilterOptions
+                  {...routeProps}
+                  setVisibilityFilter={handleSetVisibilityFilter}
+                  setPetFriendly={handleSetPetFriendly}
+                  resetState={resetState}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/"
+              render={(routeProps) => (
+                <PlantContainer
+                  {...routeProps}
+                  search={search}
+                  visibilityFilter={visibilityFilter}
+                  petFriendly={petFriendly}
+                />
+              )}
+            />
+          </Routes>
         </div>
       ) : (
         <div className="cover-image">
