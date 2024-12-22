@@ -36,24 +36,26 @@ const LoginForm = ({ loginUser, fetchPlants }) => {
   return (
     <div id="login-form">
       <form onSubmit={handleOnSubmit}>
-        <span>Name:</span>
-        <input
-          type="text"
-          name="name"
-          placeholder="Please enter your name"
-          value={name}
-          onChange={handleOnChange}
-        />
-        <br />
-        <span>Email:</span>
-        <input
-          type="email"
-          name="email"
-          placeholder="Please enter your email"
-          value={email}
-          onChange={handleOnChange}
-        />
-        <br />
+        <div style={{ display: "flex", "align-items": "center" }}>
+          <span>Name:</span>
+          <input
+            type="text"
+            name="name"
+            placeholder="Please enter your name"
+            value={name}
+            onChange={handleOnChange}
+          />
+        </div>
+        <div style={{ display: "flex", "align-items": "center" }}>
+          <span>Email:</span>
+          <input
+            type="email"
+            name="email"
+            placeholder="Please enter your email"
+            value={email}
+            onChange={handleOnChange}
+          />
+        </div>
         <input id="login-submit" type="submit" value="Get Shopping!" />
       </form>
     </div>

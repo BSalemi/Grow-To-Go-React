@@ -215,13 +215,13 @@ code {
 }
 
 #app-header {
-  width: min-content;
-  display: inline-block;
   background: rgba(190, 220, 188, 0.9);
-  margin-bottom: 55px;
-  padding: 30px 15px 3px 15px;
-  border: #ffd4fe 4px outset;
-  border-radius: 25px;
+  border-top: rgba(69, 125, 64) outset 5px;
+  border-bottom: rgba(69, 125, 64) solid 5px;
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
 .logo-image {
@@ -468,13 +468,28 @@ code {
 }
 
 #login-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
   background: rgba(190, 220, 188, 0.9);
   border: #457d40 5px outset;
   border-radius: 25px;
-  padding: 10px;
+  padding: 15px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   margin: 0 auto;
   width: 300px;
+  height: 300px;
   text-align: center;
+}
+
+#login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%; /* Ensure the form takes up the full height of the container */
 }
 
 #login-form input {
@@ -482,6 +497,7 @@ code {
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
+  width: 80%; /* Adjust width as needed */
 }
 
 #login-form span {
@@ -497,6 +513,7 @@ code {
   background-color: #457d40;
   color: white;
   transition: all 0.2s ease-in-out;
+  width: 80%; /* Adjust width as needed */
 }
 
 #login-submit:hover {
